@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0701C03C1ABF3441008E75DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C03B1ABF3441008E75DA /* main.m */; };
+		0701C03F1ABF3441008E75DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C03E1ABF3441008E75DA /* AppDelegate.m */; };
+		0701C0421ABF3441008E75DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C0411ABF3441008E75DA /* ViewController.m */; };
+		0701C0451ABF3441008E75DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0431ABF3441008E75DA /* Main.storyboard */; };
+		0701C0471ABF3441008E75DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0461ABF3441008E75DA /* Images.xcassets */; };
+		0701C04A1ABF3441008E75DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0481ABF3441008E75DA /* LaunchScreen.xib */; };
+		0701C0561ABF3441008E75DA /* BevoMapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C0551ABF3441008E75DA /* BevoMapsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0701C0501ABF3441008E75DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0701C02E1ABF3441008E75DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0701C0351ABF3441008E75DA;
+			remoteInfo = BevoMaps;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0701C0361ABF3441008E75DA /* BevoMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BevoMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0701C03A1ABF3441008E75DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0701C03B1ABF3441008E75DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0701C03D1ABF3441008E75DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0701C03E1ABF3441008E75DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0701C0401ABF3441008E75DA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0701C0411ABF3441008E75DA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0701C0441ABF3441008E75DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0701C0461ABF3441008E75DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0701C0491ABF3441008E75DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0701C04F1ABF3441008E75DA /* BevoMapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevoMapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0701C0541ABF3441008E75DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0701C0551ABF3441008E75DA /* BevoMapsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BevoMapsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0701C0331ABF3441008E75DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0701C04C1ABF3441008E75DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0701C02D1ABF3441008E75DA = {
+			isa = PBXGroup;
+			children = (
+				0701C0381ABF3441008E75DA /* BevoMaps */,
+				0701C0521ABF3441008E75DA /* BevoMapsTests */,
+				0701C0371ABF3441008E75DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0701C0371ABF3441008E75DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0701C0361ABF3441008E75DA /* BevoMaps.app */,
+				0701C04F1ABF3441008E75DA /* BevoMapsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0701C0381ABF3441008E75DA /* BevoMaps */ = {
+			isa = PBXGroup;
+			children = (
+				0701C03D1ABF3441008E75DA /* AppDelegate.h */,
+				0701C03E1ABF3441008E75DA /* AppDelegate.m */,
+				0701C0401ABF3441008E75DA /* ViewController.h */,
+				0701C0411ABF3441008E75DA /* ViewController.m */,
+				0701C0431ABF3441008E75DA /* Main.storyboard */,
+				0701C0461ABF3441008E75DA /* Images.xcassets */,
+				0701C0481ABF3441008E75DA /* LaunchScreen.xib */,
+				0701C0391ABF3441008E75DA /* Supporting Files */,
+			);
+			path = BevoMaps;
+			sourceTree = "<group>";
+		};
+		0701C0391ABF3441008E75DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0701C03A1ABF3441008E75DA /* Info.plist */,
+				0701C03B1ABF3441008E75DA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0701C0521ABF3441008E75DA /* BevoMapsTests */ = {
+			isa = PBXGroup;
+			children = (
+				0701C0551ABF3441008E75DA /* BevoMapsTests.m */,
+				0701C0531ABF3441008E75DA /* Supporting Files */,
+			);
+			path = BevoMapsTests;
+			sourceTree = "<group>";
+		};
+		0701C0531ABF3441008E75DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0701C0541ABF3441008E75DA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0701C0351ABF3441008E75DA /* BevoMaps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0701C0591ABF3441008E75DA /* Build configuration list for PBXNativeTarget "BevoMaps" */;
+			buildPhases = (
+				0701C0321ABF3441008E75DA /* Sources */,
+				0701C0331ABF3441008E75DA /* Frameworks */,
+				0701C0341ABF3441008E75DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BevoMaps;
+			productName = BevoMaps;
+			productReference = 0701C0361ABF3441008E75DA /* BevoMaps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0701C04E1ABF3441008E75DA /* BevoMapsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0701C05C1ABF3441008E75DA /* Build configuration list for PBXNativeTarget "BevoMapsTests" */;
+			buildPhases = (
+				0701C04B1ABF3441008E75DA /* Sources */,
+				0701C04C1ABF3441008E75DA /* Frameworks */,
+				0701C04D1ABF3441008E75DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0701C0511ABF3441008E75DA /* PBXTargetDependency */,
+			);
+			name = BevoMapsTests;
+			productName = BevoMapsTests;
+			productReference = 0701C04F1ABF3441008E75DA /* BevoMapsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0701C02E1ABF3441008E75DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = BevoMaps;
+				TargetAttributes = {
+					0701C0351ABF3441008E75DA = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					0701C04E1ABF3441008E75DA = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 0701C0351ABF3441008E75DA;
+					};
+				};
+			};
+			buildConfigurationList = 0701C0311ABF3441008E75DA /* Build configuration list for PBXProject "BevoMaps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0701C02D1ABF3441008E75DA;
+			productRefGroup = 0701C0371ABF3441008E75DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0701C0351ABF3441008E75DA /* BevoMaps */,
+				0701C04E1ABF3441008E75DA /* BevoMapsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0701C0341ABF3441008E75DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0701C0451ABF3441008E75DA /* Main.storyboard in Resources */,
+				0701C04A1ABF3441008E75DA /* LaunchScreen.xib in Resources */,
+				0701C0471ABF3441008E75DA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0701C04D1ABF3441008E75DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0701C0321ABF3441008E75DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0701C0421ABF3441008E75DA /* ViewController.m in Sources */,
+				0701C03F1ABF3441008E75DA /* AppDelegate.m in Sources */,
+				0701C03C1ABF3441008E75DA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0701C04B1ABF3441008E75DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0701C0561ABF3441008E75DA /* BevoMapsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0701C0511ABF3441008E75DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0701C0351ABF3441008E75DA /* BevoMaps */;
+			targetProxy = 0701C0501ABF3441008E75DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0701C0431ABF3441008E75DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0701C0441ABF3441008E75DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0701C0481ABF3441008E75DA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0701C0491ABF3441008E75DA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0701C0571ABF3441008E75DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0701C0581ABF3441008E75DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0701C05A1ABF3441008E75DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BevoMaps/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0701C05B1ABF3441008E75DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BevoMaps/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0701C05D1ABF3441008E75DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BevoMapsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BevoMaps.app/BevoMaps";
+			};
+			name = Debug;
+		};
+		0701C05E1ABF3441008E75DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BevoMapsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BevoMaps.app/BevoMaps";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0701C0311ABF3441008E75DA /* Build configuration list for PBXProject "BevoMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0701C0571ABF3441008E75DA /* Debug */,
+				0701C0581ABF3441008E75DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0701C0591ABF3441008E75DA /* Build configuration list for PBXNativeTarget "BevoMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0701C05A1ABF3441008E75DA /* Debug */,
+				0701C05B1ABF3441008E75DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0701C05C1ABF3441008E75DA /* Build configuration list for PBXNativeTarget "BevoMapsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0701C05D1ABF3441008E75DA /* Debug */,
+				0701C05E1ABF3441008E75DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0701C02E1ABF3441008E75DA /* Project object */;
+}
