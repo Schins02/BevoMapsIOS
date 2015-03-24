@@ -14,6 +14,7 @@
 		0701C0471ABF3441008E75DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0461ABF3441008E75DA /* Images.xcassets */; };
 		0701C04A1ABF3441008E75DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0481ABF3441008E75DA /* LaunchScreen.xib */; };
 		0701C0561ABF3441008E75DA /* BevoMapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C0551ABF3441008E75DA /* BevoMapsTests.m */; };
+		EA1963F51AC1134E008D1896 /* SearchLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1963F41AC1134E008D1896 /* SearchLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		0701C04F1ABF3441008E75DA /* BevoMapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevoMapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0701C0541ABF3441008E75DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0701C0551ABF3441008E75DA /* BevoMapsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BevoMapsTests.m; sourceTree = "<group>"; };
+		EA1963F31AC1134E008D1896 /* SearchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchLayer.h; path = BevoMaps/SearchLayer.h; sourceTree = "<group>"; };
+		EA1963F41AC1134E008D1896 /* SearchLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchLayer.m; path = BevoMaps/SearchLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 		0701C02D1ABF3441008E75DA = {
 			isa = PBXGroup;
 			children = (
+				EA1963F31AC1134E008D1896 /* SearchLayer.h */,
+				EA1963F41AC1134E008D1896 /* SearchLayer.m */,
 				0701C0381ABF3441008E75DA /* BevoMaps */,
 				0701C0521ABF3441008E75DA /* BevoMapsTests */,
 				0701C0371ABF3441008E75DA /* Products */,
@@ -222,6 +227,7 @@
 				0701C0421ABF3441008E75DA /* ViewController.m in Sources */,
 				0701C03F1ABF3441008E75DA /* AppDelegate.m in Sources */,
 				0701C03C1ABF3441008E75DA /* main.m in Sources */,
+				EA1963F51AC1134E008D1896 /* SearchLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +420,7 @@
 				0701C05B1ABF3441008E75DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0701C05C1ABF3441008E75DA /* Build configuration list for PBXNativeTarget "BevoMapsTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +429,7 @@
 				0701C05E1ABF3441008E75DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
