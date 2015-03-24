@@ -66,8 +66,7 @@
 		0701C02D1ABF3441008E75DA = {
 			isa = PBXGroup;
 			children = (
-				EA1963F31AC1134E008D1896 /* SearchLayer.h */,
-				EA1963F41AC1134E008D1896 /* SearchLayer.m */,
+				EA3869041AC215E4007ED061 /* Models */,
 				0701C0381ABF3441008E75DA /* BevoMaps */,
 				0701C0521ABF3441008E75DA /* BevoMapsTests */,
 				0701C0371ABF3441008E75DA /* Products */,
@@ -122,6 +121,15 @@
 				0701C0541ABF3441008E75DA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA3869041AC215E4007ED061 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA1963F31AC1134E008D1896 /* SearchLayer.h */,
+				EA1963F41AC1134E008D1896 /* SearchLayer.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
