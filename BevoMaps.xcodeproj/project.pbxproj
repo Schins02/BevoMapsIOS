@@ -14,6 +14,17 @@
 		0701C0471ABF3441008E75DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0461ABF3441008E75DA /* Images.xcassets */; };
 		0701C04A1ABF3441008E75DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0481ABF3441008E75DA /* LaunchScreen.xib */; };
 		0701C0561ABF3441008E75DA /* BevoMapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C0551ABF3441008E75DA /* BevoMapsTests.m */; };
+		A428B0EE1AC217F900DDEE95 /* BuildingData.m in Sources */ = {isa = PBXBuildFile; fileRef = A428B0ED1AC217F900DDEE95 /* BuildingData.m */; };
+		A48017E21AC1C99B00D0FC09 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017DD1AC1C99B00D0FC09 /* Bolts.framework */; };
+		A48017E31AC1C99B00D0FC09 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017DE1AC1C99B00D0FC09 /* Parse.framework */; };
+		A48017E41AC1C99B00D0FC09 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017DF1AC1C99B00D0FC09 /* ParseCrashReporting.framework */; };
+		A48017E51AC1C99B00D0FC09 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017E01AC1C99B00D0FC09 /* ParseFacebookUtils.framework */; };
+		A48017E61AC1C99B00D0FC09 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017E11AC1C99B00D0FC09 /* ParseUI.framework */; };
+		A48017E91AC1CB9700D0FC09 /* BuildingJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A48017E81AC1CB9700D0FC09 /* BuildingJSON.m */; };
+		A48017EB1AC1D69D00D0FC09 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017EA1AC1D69D00D0FC09 /* libsqlite3.0.dylib */; };
+		A48017F31AC1E53E00D0FC09 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017F21AC1E53E00D0FC09 /* AudioToolbox.framework */; };
+		A48017F71AC1F09700D0FC09 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017F61AC1F09700D0FC09 /* SystemConfiguration.framework */; };
+		A48017F91AC1F0C000D0FC09 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017F81AC1F0C000D0FC09 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +51,20 @@
 		0701C04F1ABF3441008E75DA /* BevoMapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevoMapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0701C0541ABF3441008E75DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0701C0551ABF3441008E75DA /* BevoMapsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BevoMapsTests.m; sourceTree = "<group>"; };
+		A428B0EC1AC217F900DDEE95 /* BuildingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingData.h; sourceTree = "<group>"; };
+		A428B0ED1AC217F900DDEE95 /* BuildingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingData.m; sourceTree = "<group>"; };
+		A48017DD1AC1C99B00D0FC09 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A48017DE1AC1C99B00D0FC09 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A48017DF1AC1C99B00D0FC09 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		A48017E01AC1C99B00D0FC09 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		A48017E11AC1C99B00D0FC09 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		A48017E71AC1CB9700D0FC09 /* BuildingJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingJSON.h; sourceTree = "<group>"; };
+		A48017E81AC1CB9700D0FC09 /* BuildingJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingJSON.m; sourceTree = "<group>"; };
+		A48017EA1AC1D69D00D0FC09 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsqlite3.0.dylib; sourceTree = "<group>"; };
+		A48017F21AC1E53E00D0FC09 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A48017F41AC1F01800D0FC09 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A48017F61AC1F09700D0FC09 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A48017F81AC1F0C000D0FC09 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +72,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48017F91AC1F0C000D0FC09 /* MobileCoreServices.framework in Frameworks */,
+				A48017F71AC1F09700D0FC09 /* SystemConfiguration.framework in Frameworks */,
+				A48017F31AC1E53E00D0FC09 /* AudioToolbox.framework in Frameworks */,
+				A48017E31AC1C99B00D0FC09 /* Parse.framework in Frameworks */,
+				A48017E41AC1C99B00D0FC09 /* ParseCrashReporting.framework in Frameworks */,
+				A48017EB1AC1D69D00D0FC09 /* libsqlite3.0.dylib in Frameworks */,
+				A48017E61AC1C99B00D0FC09 /* ParseUI.framework in Frameworks */,
+				A48017E51AC1C99B00D0FC09 /* ParseFacebookUtils.framework in Frameworks */,
+				A48017E21AC1C99B00D0FC09 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +100,7 @@
 				0701C0381ABF3441008E75DA /* BevoMaps */,
 				0701C0521ABF3441008E75DA /* BevoMapsTests */,
 				0701C0371ABF3441008E75DA /* Products */,
+				A48017DB1AC1C8E700D0FC09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,8 +116,7 @@
 		0701C0381ABF3441008E75DA /* BevoMaps */ = {
 			isa = PBXGroup;
 			children = (
-				0701C03D1ABF3441008E75DA /* AppDelegate.h */,
-				0701C03E1ABF3441008E75DA /* AppDelegate.m */,
+				A428B0EF1AC221B300DDEE95 /* DataLayer */,
 				0701C0401ABF3441008E75DA /* ViewController.h */,
 				0701C0411ABF3441008E75DA /* ViewController.m */,
 				0701C0431ABF3441008E75DA /* Main.storyboard */,
@@ -96,6 +130,8 @@
 		0701C0391ABF3441008E75DA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0701C03E1ABF3441008E75DA /* AppDelegate.m */,
+				0701C03D1ABF3441008E75DA /* AppDelegate.h */,
 				0701C03A1ABF3441008E75DA /* Info.plist */,
 				0701C03B1ABF3441008E75DA /* main.m */,
 			);
@@ -117,6 +153,42 @@
 				0701C0541ABF3441008E75DA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A428B0EF1AC221B300DDEE95 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				A48017E81AC1CB9700D0FC09 /* BuildingJSON.m */,
+				A48017E71AC1CB9700D0FC09 /* BuildingJSON.h */,
+				A428B0EC1AC217F900DDEE95 /* BuildingData.h */,
+				A428B0ED1AC217F900DDEE95 /* BuildingData.m */,
+			);
+			name = DataLayer;
+			sourceTree = "<group>";
+		};
+		A48017DB1AC1C8E700D0FC09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A48017F81AC1F0C000D0FC09 /* MobileCoreServices.framework */,
+				A48017F61AC1F09700D0FC09 /* SystemConfiguration.framework */,
+				A48017F41AC1F01800D0FC09 /* CFNetwork.framework */,
+				A48017F21AC1E53E00D0FC09 /* AudioToolbox.framework */,
+				A48017EA1AC1D69D00D0FC09 /* libsqlite3.0.dylib */,
+				A48017DC1AC1C99B00D0FC09 /* parse-library-1.6.5 */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A48017DC1AC1C99B00D0FC09 /* parse-library-1.6.5 */ = {
+			isa = PBXGroup;
+			children = (
+				A48017DD1AC1C99B00D0FC09 /* Bolts.framework */,
+				A48017DE1AC1C99B00D0FC09 /* Parse.framework */,
+				A48017DF1AC1C99B00D0FC09 /* ParseCrashReporting.framework */,
+				A48017E01AC1C99B00D0FC09 /* ParseFacebookUtils.framework */,
+				A48017E11AC1C99B00D0FC09 /* ParseUI.framework */,
+			);
+			path = "parse-library-1.6.5";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0701C0421ABF3441008E75DA /* ViewController.m in Sources */,
+				A48017E91AC1CB9700D0FC09 /* BuildingJSON.m in Sources */,
+				A428B0EE1AC217F900DDEE95 /* BuildingData.m in Sources */,
 				0701C03F1ABF3441008E75DA /* AppDelegate.m in Sources */,
 				0701C03C1ABF3441008E75DA /* main.m in Sources */,
 			);
@@ -345,9 +419,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1.6.5",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BevoMaps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -355,9 +440,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1.6.5",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BevoMaps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -414,6 +510,7 @@
 				0701C05B1ABF3441008E75DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0701C05C1ABF3441008E75DA /* Build configuration list for PBXNativeTarget "BevoMapsTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +519,7 @@
 				0701C05E1ABF3441008E75DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

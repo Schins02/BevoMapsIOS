@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>96C61B94-674C-4E6D-9D4F-6370ADCB70E6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BevoMaps</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CF0A516DEC3D091FF5526B1E95496F45774764B6</key>
+		<string>https://github.com/tungoo7/BevoMapsIOS</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BevoMaps.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CF0A516DEC3D091FF5526B1E95496F45774764B6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tungoo7/BevoMapsIOS</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CF0A516DEC3D091FF5526B1E95496F45774764B6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CF0A516DEC3D091FF5526B1E95496F45774764B6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BevoMapsIOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
