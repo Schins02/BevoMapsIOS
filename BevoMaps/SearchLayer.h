@@ -10,4 +10,8 @@
 
 @interface SearchLayer : NSObject
 
++(NSDictionary *)parseInputText_TestOnly;
+
++(NSDictionary *)parseInputText:(NSString *)input;
+
 @end
