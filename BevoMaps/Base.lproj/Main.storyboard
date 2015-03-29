@@ -20,14 +20,30 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Floor " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3O-Vd-o2H">
+                                <rect key="frame" x="16" y="120" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtU-yx-wV8">
+                                <rect key="frame" x="0.0" y="108" width="375" height="576"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cjz-E6-ZAg" appends="YES" id="Kz7-vz-x2M"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="BevoMaps" id="5dg-cF-foM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="currentFloor" destination="K3O-Vd-o2H" id="MpX-6w-Axn"/>
+                        <outlet property="scrollView" destination="RtU-yx-wV8" id="rCM-ED-qm7"/>
                         <outlet property="searchBar" destination="bkH-ba-AN3" id="2Ul-lK-qgu"/>
                         <outlet property="searchDisplayController" destination="w1p-LR-tyo" id="0ai-ca-hAy"/>
+                        <outlet property="swipeGesture" destination="cjz-E6-ZAg" id="v6J-bU-wyo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNo-4z-ezu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,8 +55,9 @@
                         <outlet property="searchResultsDelegate" destination="uwF-3c-IEv" id="t7o-eE-fur"/>
                     </connections>
                 </searchDisplayController>
+                <swipeGestureRecognizer direction="right" id="cjz-E6-ZAg"/>
             </objects>
-            <point key="canvasLocation" x="2091.5" y="97.5"/>
+            <point key="canvasLocation" x="2057.5" y="97.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nUH-6k-Qmz">
