@@ -17,8 +17,6 @@
 }
 
 // Cases to handle later
-// NSString *input = @"GDC floor 1";
-// NSString *input = @"GDC first floor";
 
 // Correct input GDC 1.xxx
 // Assume correct input
@@ -35,7 +33,8 @@
         // Add building -- need to move to own method to error check
         [result setObject:searchResults[0] forKey:[SearchLayer getKey:0]];
         // Add floor -- need to move to own method to error check
-        [result setObject:searchResults[1] forKey:[SearchLayer getKey:1]];
+        NSArray *floorAndRoom = [searchResults[1] componentsSeparatedByString:@"."];
+        [result setObject:floorAndRoom[0] forKey:[SearchLayer getKey:1]];
     }
     @catch (NSException *e)
     {
