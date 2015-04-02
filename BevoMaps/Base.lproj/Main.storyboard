@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zjc-Qi-Xj5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zjc-Qi-Xj5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -20,12 +20,6 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Floor " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3O-Vd-o2H">
-                                <rect key="frame" x="16" y="120" width="359" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtU-yx-wV8">
                                 <rect key="frame" x="0.0" y="108" width="375" height="576"/>
                                 <gestureRecognizers/>
@@ -39,7 +33,6 @@
                     <navigationItem key="navigationItem" title="BevoMaps" id="5dg-cF-foM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="currentFloor" destination="K3O-Vd-o2H" id="MpX-6w-Axn"/>
                         <outlet property="scrollView" destination="RtU-yx-wV8" id="rCM-ED-qm7"/>
                         <outlet property="searchBar" destination="bkH-ba-AN3" id="2Ul-lK-qgu"/>
                         <outlet property="searchDisplayController" destination="w1p-LR-tyo" id="0ai-ca-hAy"/>
@@ -55,7 +48,11 @@
                         <outlet property="searchResultsDelegate" destination="uwF-3c-IEv" id="t7o-eE-fur"/>
                     </connections>
                 </searchDisplayController>
-                <swipeGestureRecognizer direction="right" id="cjz-E6-ZAg"/>
+                <swipeGestureRecognizer direction="right" id="cjz-E6-ZAg">
+                    <connections>
+                        <action selector="floorSwipe:" destination="uwF-3c-IEv" id="yKo-vv-Lph"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2057.5" y="97.5"/>
         </scene>
