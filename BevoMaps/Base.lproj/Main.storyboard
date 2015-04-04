@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zjc-Qi-Xj5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zjc-Qi-Xj5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--BevoMaps-->
+        <!--View Controller-->
         <scene sceneID="5jw-XS-5SE">
             <objects>
                 <viewController id="uwF-3c-IEv" customClass="ViewController" sceneMemberID="viewController">
@@ -16,12 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkH-ba-AN3">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtU-yx-wV8">
-                                <rect key="frame" x="0.0" y="108" width="375" height="576"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="620"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="cjz-E6-ZAg" appends="YES" id="Kz7-vz-x2M"/>
@@ -30,11 +26,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="BevoMaps" id="5dg-cF-foM"/>
+                    <navigationItem key="navigationItem" id="5dg-cF-foM">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search" borderStyle="roundedRect" minimumFontSize="17" id="scw-Fv-1gO">
+                            <rect key="frame" x="58.5" y="7" width="258" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="searchBarClicked:" destination="uwF-3c-IEv" eventType="valueChanged" id="IMK-pl-8F9"/>
+                                <action selector="searchEnd:" destination="uwF-3c-IEv" eventType="editingDidEnd" id="eIt-o3-TBi"/>
+                                <action selector="searchStart:" destination="uwF-3c-IEv" eventType="editingDidBegin" id="QMK-pC-EEr"/>
+                            </connections>
+                        </textField>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="scrollView" destination="RtU-yx-wV8" id="rCM-ED-qm7"/>
-                        <outlet property="searchBar" destination="bkH-ba-AN3" id="2Ul-lK-qgu"/>
+                        <outlet property="search" destination="scw-Fv-1gO" id="zla-Wh-UFP"/>
                         <outlet property="searchDisplayController" destination="w1p-LR-tyo" id="0ai-ca-hAy"/>
                         <outlet property="swipeGesture" destination="cjz-E6-ZAg" id="v6J-bU-wyo"/>
                     </connections>
@@ -54,7 +63,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2057.5" y="97.5"/>
+            <point key="canvasLocation" x="1944.5" y="97.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nUH-6k-Qmz">

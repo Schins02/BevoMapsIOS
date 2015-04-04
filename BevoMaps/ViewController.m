@@ -9,9 +9,7 @@
 #import "ViewController.h"
 #import "SearchLayer.h"
 
-
-
-@interface ViewController () <UIScrollViewDelegate>
+@interface ViewController () <UIScrollViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) UIImageView *imageView;
@@ -19,23 +17,42 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeGesture;
 @property (nonatomic) unsigned floor;
+@property (weak, nonatomic) IBOutlet UITextField *search;
 
 @end
 
 @implementation ViewController
 
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+- (IBAction)searchStart:(UITextField *)sender
 {
-    [self handleSearch:searchBar];
+    sender.text = @"";
 }
 
-- (void)handleSearch:(UISearchBar *)searchBar
+- (IBAction)searchEnd:(UITextField *)sender
 {
-    NSLog(@"User searched for %@", searchBar.text);
-    NSDictionary *searchResults = [SearchLayer parseInputText:searchBar.text];
-    NSLog(@"Parsed as: %@", searchResults);
-    [searchBar resignFirstResponder]; // if you want the keyboard to go away
+    if ([self textFieldShouldReturn:sender])
+    {
+        [self handleSearch:sender];
+    }
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.search) {
+        [textField resignFirstResponder];
+        return YES;
+    }
+    return NO;
+}
+
+- (void)handleSearch:(UITextField *)textField
+{
+    NSLog(@"User searched for %@", textField.text);
+    NSDictionary *searchResults = [SearchLayer parseInputText:textField.text];
+    NSLog(@"Parsed as: %@", searchResults);
+    [textField resignFirstResponder]; // if you want the keyboard to go away
+}
+
 
 -(void)setScrollView:(UIScrollView *)scrollView
 {
@@ -87,6 +104,7 @@
     self.swipeGesture.direction = UISwipeGestureRecognizerDirectionUp;
     self.scrollView.panGestureRecognizer.maximumNumberOfTouches = 1;
     [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.swipeGesture];
+    self.search.delegate = self;
 }
 
 - (IBAction)floorSwipe:(UISwipeGestureRecognizer *)sender {
