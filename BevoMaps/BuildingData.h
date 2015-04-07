@@ -14,4 +14,7 @@
 + (NSArray *) getMarkerList;
 + (NSMutableDictionary *) getSearchMap;
 
+#define ParseApplicationID @"7Z6Ys0bNVFV95NuisNLS8gUd7WGLEIR7AM1kWuWR" 
+#define ParseClientKey @"yYQdBeF8XSQgvpYZBnwDASbEdrxVXXO946QL4iaZ"
+
 @end

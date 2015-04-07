@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "BuildingData.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [Parse setApplicationId:@"7Z6Ys0bNVFV95NuisNLS8gUd7WGLEIR7AM1kWuWR" clientKey:@"yYQdBeF8XSQgvpYZBnwDASbEdrxVXXO946QL4iaZ"];
+    [Parse setApplicationId:ParseApplicationID clientKey:ParseClientKey];
     PFACL *defaultACL = [PFACL ACL];
     [defaultACL setPublicReadAccess:YES];
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
