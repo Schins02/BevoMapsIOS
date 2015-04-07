@@ -14,16 +14,16 @@
 
 + (NSMutableDictionary *) getBuildingMap {
     
-    NSMutableDictionary *json = [NSMutableDictionary new];
+    NSMutableDictionary *buildingMap = [NSMutableDictionary new];
     PFQuery *query = [BuildingJSON query];
     [query whereKey:@"pk" equalTo:@"jsonObj"];
-    PFObject *buildingData = [query getFirstObject];
+    PFObject *buildingJSON = [query getFirstObject];
     
     
-    if(buildingData != nil){
-        json = [buildingData objectForKey:@"Buildings"];
-        for(id key in json) {  //FOR DEBUGGING REMOVE LATER
-            id value = [json objectForKey:key];
+    if(buildingJSON != nil){
+        buildingMap = [buildingJSON objectForKey:@"Buildings"];
+        for(id key in buildingMap) {  //FOR DEBUGGING REMOVE LATER
+            id value = [buildingMap objectForKey:key];
             NSLog(@"Key: %@ Value: %@", key, value);
         }
         
@@ -31,7 +31,7 @@
     else
         NSLog(@"Parse Query Failed");
     
-    return json;
+    return buildingMap;
 }
 
 + (NSArray *) getMarkerList {
