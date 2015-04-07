@@ -10,11 +10,17 @@
 
 @interface DataLayer : NSObject
 
+#define ParseApplicationID @"7Z6Ys0bNVFV95NuisNLS8gUd7WGLEIR7AM1kWuWR"
+#define ParseClientKey @"yYQdBeF8XSQgvpYZBnwDASbEdrxVXXO946QL4iaZ"
+#define FloorNames @"floorNames"
+#define Latitude @"latitude"
+#define Longitude @"longitude"
+#define LongName @"longName"
+#define ShortName @"shortName"
+#define Thumbnail @"thumbnail"
+
 + (NSMutableDictionary *) getBuildingMap;
 + (NSArray *) getMarkerList;
 + (NSMutableDictionary *) getSearchMap;
-
-#define ParseApplicationID @"7Z6Ys0bNVFV95NuisNLS8gUd7WGLEIR7AM1kWuWR" 
-#define ParseClientKey @"yYQdBeF8XSQgvpYZBnwDASbEdrxVXXO946QL4iaZ"
 
 @end
