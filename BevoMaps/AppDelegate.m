@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import "BuildingData.h"
+#import "DataLayer.h"
 
 @interface AppDelegate ()
 

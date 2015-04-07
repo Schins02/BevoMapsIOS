@@ -14,7 +14,7 @@
 		0701C0471ABF3441008E75DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0461ABF3441008E75DA /* Images.xcassets */; };
 		0701C04A1ABF3441008E75DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0481ABF3441008E75DA /* LaunchScreen.xib */; };
 		0701C0561ABF3441008E75DA /* BevoMapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C0551ABF3441008E75DA /* BevoMapsTests.m */; };
-		A428B0EE1AC217F900DDEE95 /* BuildingData.m in Sources */ = {isa = PBXBuildFile; fileRef = A428B0ED1AC217F900DDEE95 /* BuildingData.m */; };
+		A428B0EE1AC217F900DDEE95 /* DataLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A428B0ED1AC217F900DDEE95 /* DataLayer.m */; };
 		A48017E21AC1C99B00D0FC09 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017DD1AC1C99B00D0FC09 /* Bolts.framework */; };
 		A48017E31AC1C99B00D0FC09 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017DE1AC1C99B00D0FC09 /* Parse.framework */; };
 		A48017E41AC1C99B00D0FC09 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017DF1AC1C99B00D0FC09 /* ParseCrashReporting.framework */; };
@@ -51,8 +51,8 @@
 		0701C04F1ABF3441008E75DA /* BevoMapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevoMapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0701C0541ABF3441008E75DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0701C0551ABF3441008E75DA /* BevoMapsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BevoMapsTests.m; sourceTree = "<group>"; };
-		A428B0EC1AC217F900DDEE95 /* BuildingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingData.h; sourceTree = "<group>"; };
-		A428B0ED1AC217F900DDEE95 /* BuildingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingData.m; sourceTree = "<group>"; };
+		A428B0EC1AC217F900DDEE95 /* DataLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLayer.h; sourceTree = "<group>"; };
+		A428B0ED1AC217F900DDEE95 /* DataLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLayer.m; sourceTree = "<group>"; };
 		A48017DD1AC1C99B00D0FC09 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A48017DE1AC1C99B00D0FC09 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A48017DF1AC1C99B00D0FC09 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -160,8 +160,8 @@
 			children = (
 				A48017E81AC1CB9700D0FC09 /* BuildingJSON.m */,
 				A48017E71AC1CB9700D0FC09 /* BuildingJSON.h */,
-				A428B0EC1AC217F900DDEE95 /* BuildingData.h */,
-				A428B0ED1AC217F900DDEE95 /* BuildingData.m */,
+				A428B0EC1AC217F900DDEE95 /* DataLayer.h */,
+				A428B0ED1AC217F900DDEE95 /* DataLayer.m */,
 			);
 			name = DataLayer;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 			files = (
 				0701C0421ABF3441008E75DA /* ViewController.m in Sources */,
 				A48017E91AC1CB9700D0FC09 /* BuildingJSON.m in Sources */,
-				A428B0EE1AC217F900DDEE95 /* BuildingData.m in Sources */,
+				A428B0EE1AC217F900DDEE95 /* DataLayer.m in Sources */,
 				0701C03F1ABF3441008E75DA /* AppDelegate.m in Sources */,
 				0701C03C1ABF3441008E75DA /* main.m in Sources */,
 			);

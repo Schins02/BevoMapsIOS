@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BuildingData : NSObject
+@interface DataLayer : NSObject
 
 + (NSMutableDictionary *) getBuildingMap;
 + (NSArray *) getMarkerList;

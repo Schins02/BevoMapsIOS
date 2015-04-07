@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "BuildingData.h"
+#import "DataLayer.h"
 
 @interface ViewController ()
 
@@ -17,8 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSMutableDictionary *buildingData = [BuildingData getBuildingMap];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSMutableDictionary *buildingMap = [DataLayer getBuildingMap];
 }
 
 - (void)didReceiveMemoryWarning {

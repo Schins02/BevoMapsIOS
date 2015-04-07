@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 BevoMaps. All rights reserved.
 //
 
-#import "BuildingData.h"
+#import "DataLayer.h"
 #import "BuildingJSON.h"
 #import <Parse/PFObject+Subclass.h>
 
-@implementation BuildingData
+@implementation DataLayer
 
 + (NSMutableDictionary *) getBuildingMap {
     
