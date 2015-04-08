@@ -28,22 +28,24 @@
         }
         
     }
-    else
+    else{
         NSLog(@"Parse Query Failed");
+        return  nil;
+    }
     
     return buildingMap;
 }
 
 + (NSArray *) getMarkerArray {
     
-    NSArray *markerList = [NSArray new];
+    NSArray *markers = [NSArray new];
     PFQuery *query = [BuildingJSON query];
     [query whereKey:@"pk" equalTo:@"jsonObj"];
     PFObject *buildingJSON = [query getFirstObject];
     
     if(buildingJSON != nil){
-        markerList = [buildingJSON objectForKey:@"Markers"];
-        for(NSDictionary *dict in markerList){
+        markers = [buildingJSON objectForKey:@"Markers"];
+        for(NSDictionary *dict in markers){
             for(id key in dict) {
                 id value = [dict objectForKey:key];
                 NSLog(@"Key: %@ Value: %@", key, value); //FOR DEBUGGING REMOVE LATER
@@ -51,10 +53,12 @@
             
         }
     }
-    else
+    else{
         NSLog(@"Parse Query Failed");
+        return nil;
+    }
     
-    return markerList;
+    return markers;
 }
 
 + (NSMutableDictionary *) getSearchMap{
