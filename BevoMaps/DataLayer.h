@@ -20,7 +20,7 @@
 #define Thumbnail @"thumbnail"
 
 + (NSMutableDictionary *) getBuildingMap;
-+ (NSArray *) getMarkerList;
++ (NSArray *) getMarkerArray;
 + (NSMutableDictionary *) getSearchMap;
 
 @end

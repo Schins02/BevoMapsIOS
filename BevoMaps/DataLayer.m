@@ -22,9 +22,9 @@
     
     if(buildingJSON != nil){
         buildingMap = [buildingJSON objectForKey:@"Buildings"];
-        for(id key in buildingMap) {  //FOR DEBUGGING REMOVE LATER
+        for(id key in buildingMap) {
             id value = [buildingMap objectForKey:key];
-            NSLog(@"Key: %@ Value: %@", key, value);
+            NSLog(@"Key: %@ Value: %@", key, value); //FOR DEBUGGING REMOVE LATER
         }
         
     }
@@ -34,8 +34,27 @@
     return buildingMap;
 }
 
-+ (NSArray *) getMarkerList {
-    return nil;
++ (NSArray *) getMarkerArray {
+    
+    NSArray *markerList = [NSArray new];
+    PFQuery *query = [BuildingJSON query];
+    [query whereKey:@"pk" equalTo:@"jsonObj"];
+    PFObject *buildingJSON = [query getFirstObject];
+    
+    if(buildingJSON != nil){
+        markerList = [buildingJSON objectForKey:@"Markers"];
+        for(NSDictionary *dict in markerList){
+            for(id key in dict) {
+                id value = [dict objectForKey:key];
+                NSLog(@"Key: %@ Value: %@", key, value); //FOR DEBUGGING REMOVE LATER
+            }
+            
+        }
+    }
+    else
+        NSLog(@"Parse Query Failed");
+    
+    return markerList;
 }
 
 + (NSMutableDictionary *) getSearchMap{

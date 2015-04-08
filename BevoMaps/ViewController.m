@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSMutableDictionary *buildingMap = [DataLayer getBuildingMap];
+    NSArray *markers = [DataLayer getMarkerArray];
 }
 
 - (void)didReceiveMemoryWarning {
