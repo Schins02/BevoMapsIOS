@@ -11,17 +11,24 @@
 
 @interface ViewController () <UIScrollViewDelegate, UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeGesture;
 @property (nonatomic) unsigned floor;
 @property (weak, nonatomic) IBOutlet UITextField *search;
+@property (weak, nonatomic) IBOutlet UILabel *floorLabel;
 
 @end
 
 @implementation ViewController
+
+
+/*
+ *
+ * Start search code
+ *
+ */
 
 - (IBAction)searchStart:(UITextField *)sender
 {
@@ -51,6 +58,18 @@
     NSDictionary *searchResults = [SearchLayer parseInputText:textField.text];
     NSLog(@"Parsed as: %@", searchResults);
     [textField resignFirstResponder]; // if you want the keyboard to go away
+}
+
+/*
+ *
+ * End search code
+ *
+ */
+
+-(void)setFloor:(unsigned int)floor
+{
+    _floor = floor;
+    self.floorLabel.text = [NSString stringWithFormat:@"Current Floor: %u", floor];
 }
 
 
@@ -96,9 +115,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithRed:232.0/255.0 green:221.0/255.0 blue:189.0/255.0 alpha:1.0];
     self.image = [UIImage imageNamed:@"GDCFloor1"];
     [self.scrollView addSubview:self.imageView];
-    self.searchBar.delegate = self;
     self.floor = 1;
     self.swipeGesture.numberOfTouchesRequired = 2;
     self.swipeGesture.direction = UISwipeGestureRecognizerDirectionUp;
