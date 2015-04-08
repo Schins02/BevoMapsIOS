@@ -35,7 +35,7 @@ for root, dirs, files, in os.walk(os.getcwd()) :
 marker_dict["Markers"] = marker_list
 print marker_dict
 
-# update column in BuildingJSON table vie PUT ---------------------------------- 
+# update column in BuildingJSON table via PUT ---------------------------------- 
 
 connection.request('PUT', '/1/classes/BuildingJSON/LBWuw7Pjhj', json.dumps(marker_dict), {
  	"X-Parse-Application-Id": "7Z6Ys0bNVFV95NuisNLS8gUd7WGLEIR7AM1kWuWR",

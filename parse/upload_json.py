@@ -1,14 +1,21 @@
 import os, json, httplib, copy
 
-#connect to Parse
+# connect to Parse ------------------------------------------------------------
+
 connection = httplib.HTTPSConnection('api.parse.com', 443)
 connection.connect()
 
-#iterate through files in dir and upload to parse
+# iterate through files in dir and upload to parse ----------------------------
+# format: file name => building => GDC.txt ------------------------------------
+
+# set up dictionary and list to build json ------------------------------------
+
 url_data = {}
 url_data["pk"] = "jsonObj"
 url_data["Buildings"] = {}
 marker_list_fields = ["shortName", "longName", "latitude", "longitude", "thumbnail"]
+
+# iterate through files in current dir and load json --------------------------
 
 for root, dirs, files, in os.walk(os.getcwd()) :
 	for name in files : 
@@ -31,6 +38,8 @@ for root, dirs, files, in os.walk(os.getcwd()) :
 
 
 print url_data
+
+# POST data to BuildingJSON table --------------------------------------------- 
 
 connection.request('POST', '/1/classes/BuildingJSON', json.dumps(url_data), {
  	"X-Parse-Application-Id": "7Z6Ys0bNVFV95NuisNLS8gUd7WGLEIR7AM1kWuWR",
