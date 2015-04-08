@@ -18,8 +18,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
     [Parse setApplicationId:ParseApplicationID clientKey:ParseClientKey];
     PFACL *defaultACL = [PFACL ACL];
     [defaultACL setPublicReadAccess:YES];
