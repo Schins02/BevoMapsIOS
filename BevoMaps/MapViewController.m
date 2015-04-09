@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 BevoMaps. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MapViewController.h"
 #import "DataLayer.h"
 
-@interface ViewController ()
+@interface MapViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
