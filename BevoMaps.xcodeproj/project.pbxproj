@@ -25,6 +25,7 @@
 		A48017F31AC1E53E00D0FC09 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017F21AC1E53E00D0FC09 /* AudioToolbox.framework */; };
 		A48017F71AC1F09700D0FC09 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017F61AC1F09700D0FC09 /* SystemConfiguration.framework */; };
 		A48017F91AC1F0C000D0FC09 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017F81AC1F0C000D0FC09 /* MobileCoreServices.framework */; };
+		A4D307C31AD742B000EE65DE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D307C21AD742B000EE65DE /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		A48017F41AC1F01800D0FC09 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A48017F61AC1F09700D0FC09 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A48017F81AC1F0C000D0FC09 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		A4D307C21AD742B000EE65DE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D307C31AD742B000EE65DE /* MapKit.framework in Frameworks */,
 				A48017F91AC1F0C000D0FC09 /* MobileCoreServices.framework in Frameworks */,
 				A48017F71AC1F09700D0FC09 /* SystemConfiguration.framework in Frameworks */,
 				A48017F31AC1E53E00D0FC09 /* AudioToolbox.framework in Frameworks */,
@@ -169,6 +172,7 @@
 		A48017DB1AC1C8E700D0FC09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4D307C21AD742B000EE65DE /* MapKit.framework */,
 				A48017F81AC1F0C000D0FC09 /* MobileCoreServices.framework */,
 				A48017F61AC1F09700D0FC09 /* SystemConfiguration.framework */,
 				A48017F41AC1F01800D0FC09 /* CFNetwork.framework */,
