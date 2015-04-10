@@ -14,6 +14,7 @@
 		0701C0471ABF3441008E75DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0461ABF3441008E75DA /* Images.xcassets */; };
 		0701C04A1ABF3441008E75DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0481ABF3441008E75DA /* LaunchScreen.xib */; };
 		0701C0561ABF3441008E75DA /* BevoMapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C0551ABF3441008E75DA /* BevoMapsTests.m */; };
+		07A639E71AD87C8B0080088C /* CacheLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A639E61AD87C8B0080088C /* CacheLayer.m */; };
 		A428B0EE1AC217F900DDEE95 /* DataLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A428B0ED1AC217F900DDEE95 /* DataLayer.m */; };
 		A48017E21AC1C99B00D0FC09 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017DD1AC1C99B00D0FC09 /* Bolts.framework */; };
 		A48017E31AC1C99B00D0FC09 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017DE1AC1C99B00D0FC09 /* Parse.framework */; };
@@ -52,6 +53,8 @@
 		0701C04F1ABF3441008E75DA /* BevoMapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevoMapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0701C0541ABF3441008E75DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0701C0551ABF3441008E75DA /* BevoMapsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BevoMapsTests.m; sourceTree = "<group>"; };
+		07A639E51AD87C8B0080088C /* CacheLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheLayer.h; sourceTree = "<group>"; };
+		07A639E61AD87C8B0080088C /* CacheLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheLayer.m; sourceTree = "<group>"; };
 		A428B0EC1AC217F900DDEE95 /* DataLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLayer.h; sourceTree = "<group>"; };
 		A428B0ED1AC217F900DDEE95 /* DataLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLayer.m; sourceTree = "<group>"; };
 		A48017DD1AC1C99B00D0FC09 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		0701C0381ABF3441008E75DA /* BevoMaps */ = {
 			isa = PBXGroup;
 			children = (
+				07A639E11AD87C550080088C /* CacheLayer */,
 				A428B0EF1AC221B300DDEE95 /* DataLayer */,
 				0701C0401ABF3441008E75DA /* MapViewController.h */,
 				0701C0411ABF3441008E75DA /* MapViewController.m */,
@@ -156,6 +160,15 @@
 				0701C0541ABF3441008E75DA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07A639E11AD87C550080088C /* CacheLayer */ = {
+			isa = PBXGroup;
+			children = (
+				07A639E51AD87C8B0080088C /* CacheLayer.h */,
+				07A639E61AD87C8B0080088C /* CacheLayer.m */,
+			);
+			name = CacheLayer;
 			sourceTree = "<group>";
 		};
 		A428B0EF1AC221B300DDEE95 /* DataLayer */ = {
@@ -297,6 +310,7 @@
 			files = (
 				0701C0421ABF3441008E75DA /* MapViewController.m in Sources */,
 				A48017E91AC1CB9700D0FC09 /* BuildingJSON.m in Sources */,
+				07A639E71AD87C8B0080088C /* CacheLayer.m in Sources */,
 				A428B0EE1AC217F900DDEE95 /* DataLayer.m in Sources */,
 				0701C03F1ABF3441008E75DA /* AppDelegate.m in Sources */,
 				0701C03C1ABF3441008E75DA /* main.m in Sources */,
