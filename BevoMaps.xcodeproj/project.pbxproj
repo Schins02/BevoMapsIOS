@@ -16,6 +16,7 @@
 		0701C0561ABF3441008E75DA /* BevoMapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C0551ABF3441008E75DA /* BevoMapsTests.m */; };
 		0732F2F41AD881E60004760A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0732F2F21AD881E60004760A /* Bolts.framework */; };
 		0732F2F51AD881E60004760A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0732F2F31AD881E60004760A /* Parse.framework */; };
+		0732F2F81AD9030E0004760A /* ImageTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0732F2F71AD9030E0004760A /* ImageTasks.m */; };
 		07A639E71AD87C8B0080088C /* CacheLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A639E61AD87C8B0080088C /* CacheLayer.m */; };
 		07A639EA1AD87FA00080088C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48017F41AC1F01800D0FC09 /* CFNetwork.framework */; };
 		07A639EC1AD87FB00080088C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A639EB1AD87FB00080088C /* CoreGraphics.framework */; };
@@ -59,6 +60,8 @@
 		0701C0551ABF3441008E75DA /* BevoMapsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BevoMapsTests.m; sourceTree = "<group>"; };
 		0732F2F21AD881E60004760A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		0732F2F31AD881E60004760A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		0732F2F61AD902FB0004760A /* ImageTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTasks.h; sourceTree = "<group>"; };
+		0732F2F71AD9030E0004760A /* ImageTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTasks.m; sourceTree = "<group>"; };
 		07A639E51AD87C8B0080088C /* CacheLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheLayer.h; sourceTree = "<group>"; };
 		07A639E61AD87C8B0080088C /* CacheLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheLayer.m; sourceTree = "<group>"; };
 		07A639EB1AD87FB00080088C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,6 +181,8 @@
 			children = (
 				07A639E51AD87C8B0080088C /* CacheLayer.h */,
 				07A639E61AD87C8B0080088C /* CacheLayer.m */,
+				0732F2F61AD902FB0004760A /* ImageTasks.h */,
+				0732F2F71AD9030E0004760A /* ImageTasks.m */,
 			);
 			name = CacheLayer;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0732F2F81AD9030E0004760A /* ImageTasks.m in Sources */,
 				0701C0421ABF3441008E75DA /* MapViewController.m in Sources */,
 				A48017E91AC1CB9700D0FC09 /* BuildingJSON.m in Sources */,
 				07A639E71AD87C8B0080088C /* CacheLayer.m in Sources */,

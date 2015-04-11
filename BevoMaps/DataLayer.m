@@ -12,7 +12,7 @@
 
 @implementation DataLayer
 
-+ (NSMutableDictionary *) getBuildingMap {
++ (NSMutableDictionary *) buildingMap {
 
     PFQuery *query = [BuildingJSON query];
     [query whereKey:@"pk" equalTo:@"jsonObj"];
@@ -26,7 +26,7 @@
     return [buildingJSON objectForKey:@"Buildings"];
 }
 
-+ (NSArray *) getMarkerArray {
++ (NSArray *) markerArray {
     
     PFQuery *query = [BuildingJSON query];
     [query whereKey:@"pk" equalTo:@"jsonObj"];
@@ -40,7 +40,7 @@
     return [buildingJSON objectForKey:@"Markers"];
 }
 
-+ (NSMutableDictionary *) getSearchMap{
++ (NSMutableDictionary *) searchMap{
     return nil;
 }
 
