@@ -66,6 +66,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
 
   if (status == kCLAuthorizationStatusNotDetermined) {
     [manager requestWhenInUseAuthorization];
+    self.mapView.showsUserLocation = true;
   }
   else if (status == kCLAuthorizationStatusDenied) {
     NSLog(@"Locations services denied.");
