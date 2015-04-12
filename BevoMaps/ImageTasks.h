@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#define CacheLimit 10485760
+#import "BuildingVC.h"
 
 @interface ImageTasks : NSObject
 
-+ (void)downloadImage:(UIImageView *)view
++ (void)downloadImage:(BuildingVC *)view
                  info:(NSDictionary *)map
                 floor:(NSString *)floor
                 cache:(NSURL *)url;

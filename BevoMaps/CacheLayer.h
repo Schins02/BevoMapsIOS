@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BuildingVC.h"
 
 @interface CacheLayer : NSObject
 
-- (void)loadImage:(UIImage *)view
+- (void)loadImage:(BuildingVC *)view
          building:(NSString *)building
             floor:(NSString *)floor;
 

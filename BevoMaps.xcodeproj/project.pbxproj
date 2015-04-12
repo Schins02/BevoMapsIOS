@@ -25,6 +25,8 @@
 		07A639F21AD87FD30080088C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A639F11AD87FD30080088C /* Security.framework */; };
 		07A639F41AD87FE00080088C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A639F31AD87FE00080088C /* StoreKit.framework */; };
 		07A639F61AD87FE90080088C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A639F51AD87FE90080088C /* libz.dylib */; };
+		07B008A41ADAEE9700AD78A8 /* BuildingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B008A31ADAEE9700AD78A8 /* BuildingVC.m */; };
+		07CE3F2D1ADAE7970079FD1C /* SearchLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CE3F2C1ADAE7970079FD1C /* SearchLayer.m */; };
 		07DBE8791ADA234300909382 /* MapHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DBE8781ADA234300909382 /* MapHelper.m */; };
 		A428B0EE1AC217F900DDEE95 /* DataLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A428B0ED1AC217F900DDEE95 /* DataLayer.m */; };
 		A48017E91AC1CB9700D0FC09 /* BuildingJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A48017E81AC1CB9700D0FC09 /* BuildingJSON.m */; };
@@ -71,6 +73,10 @@
 		07A639F11AD87FD30080088C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		07A639F31AD87FE00080088C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		07A639F51AD87FE90080088C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		07B008A21ADAEE9700AD78A8 /* BuildingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingVC.h; sourceTree = "<group>"; };
+		07B008A31ADAEE9700AD78A8 /* BuildingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingVC.m; sourceTree = "<group>"; };
+		07CE3F2B1ADAE7970079FD1C /* SearchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLayer.h; sourceTree = "<group>"; };
+		07CE3F2C1ADAE7970079FD1C /* SearchLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLayer.m; sourceTree = "<group>"; };
 		07DBE8771ADA233100909382 /* MapHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapHelper.h; sourceTree = "<group>"; };
 		07DBE8781ADA234300909382 /* MapHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapHelper.m; sourceTree = "<group>"; };
 		A428B0EC1AC217F900DDEE95 /* DataLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLayer.h; sourceTree = "<group>"; };
@@ -139,12 +145,15 @@
 		0701C0381ABF3441008E75DA /* BevoMaps */ = {
 			isa = PBXGroup;
 			children = (
+				07CE3F2A1ADAE6AC0079FD1C /* SearchLayer */,
 				07A639E11AD87C550080088C /* CacheLayer */,
 				A428B0EF1AC221B300DDEE95 /* DataLayer */,
 				0701C0401ABF3441008E75DA /* MapVC.h */,
 				0701C0411ABF3441008E75DA /* MapVC.m */,
 				07DBE8771ADA233100909382 /* MapHelper.h */,
 				07DBE8781ADA234300909382 /* MapHelper.m */,
+				07B008A21ADAEE9700AD78A8 /* BuildingVC.h */,
+				07B008A31ADAEE9700AD78A8 /* BuildingVC.m */,
 				0701C0431ABF3441008E75DA /* Main.storyboard */,
 				0701C0461ABF3441008E75DA /* Images.xcassets */,
 				0701C0481ABF3441008E75DA /* LaunchScreen.xib */,
@@ -190,6 +199,15 @@
 				0732F2F71AD9030E0004760A /* ImageTasks.m */,
 			);
 			name = CacheLayer;
+			sourceTree = "<group>";
+		};
+		07CE3F2A1ADAE6AC0079FD1C /* SearchLayer */ = {
+			isa = PBXGroup;
+			children = (
+				07CE3F2B1ADAE7970079FD1C /* SearchLayer.h */,
+				07CE3F2C1ADAE7970079FD1C /* SearchLayer.m */,
+			);
+			name = SearchLayer;
 			sourceTree = "<group>";
 		};
 		A428B0EF1AC221B300DDEE95 /* DataLayer */ = {
@@ -328,7 +346,9 @@
 				0701C0421ABF3441008E75DA /* MapVC.m in Sources */,
 				A48017E91AC1CB9700D0FC09 /* BuildingJSON.m in Sources */,
 				07A639E71AD87C8B0080088C /* CacheLayer.m in Sources */,
+				07B008A41ADAEE9700AD78A8 /* BuildingVC.m in Sources */,
 				07DBE8791ADA234300909382 /* MapHelper.m in Sources */,
+				07CE3F2D1ADAE7970079FD1C /* SearchLayer.m in Sources */,
 				A428B0EE1AC217F900DDEE95 /* DataLayer.m in Sources */,
 				0701C03F1ABF3441008E75DA /* AppDelegate.m in Sources */,
 				0701C03C1ABF3441008E75DA /* main.m in Sources */,

@@ -48,10 +48,10 @@
   return self;
 }
 
-- (void)loadImage:(UIImageView *)view
+- (void)loadImage:(BuildingVC *)view
          building:(NSString *)building
             floor:(NSString *)floor {
-  if (floor == nil) {
+  if ([self.buildingMap objectForKey:floor] == nil) {
     floor = [self.buildingMap objectForKey:DefaultFloor];
   }
 

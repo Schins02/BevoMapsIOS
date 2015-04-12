@@ -69,11 +69,61 @@
                     <connections>
                         <outlet property="mapView" destination="dcJ-8b-jjG" id="lXS-6Q-pfZ"/>
                         <outlet property="textField" destination="Vhf-7y-Bm4" id="OOc-cY-jw2"/>
+                        <segue destination="dqA-pe-5Ny" kind="show" identifier="showBuilding" id="Yrr-id-flP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="307" y="232"/>
+        </scene>
+        <!--BuildingVC-->
+        <scene sceneID="zeT-Ss-532">
+            <objects>
+                <viewController id="dqA-pe-5Ny" customClass="BuildingVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aBZ-eH-LJX"/>
+                        <viewControllerLayoutGuide type="bottom" id="W8m-uF-snf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AAj-Xe-bkR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs6-hD-7IQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="shJ-fG-LyS" appends="YES" id="jhX-kg-nXk"/>
+                                    <outletCollection property="gestureRecognizers" destination="axm-0b-ukr" appends="YES" id="g4X-11-FxZ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cs6-hD-7IQ" firstAttribute="leading" secondItem="AAj-Xe-bkR" secondAttribute="leading" id="GZk-1M-9lG"/>
+                            <constraint firstItem="cs6-hD-7IQ" firstAttribute="bottom" secondItem="W8m-uF-snf" secondAttribute="top" id="VVh-JB-Idb"/>
+                            <constraint firstAttribute="trailing" secondItem="cs6-hD-7IQ" secondAttribute="trailing" id="Wd7-4e-I9M"/>
+                            <constraint firstItem="cs6-hD-7IQ" firstAttribute="top" secondItem="AAj-Xe-bkR" secondAttribute="top" id="tP8-RT-Wbg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="downGesture" destination="axm-0b-ukr" id="0qK-Ai-txj"/>
+                        <outlet property="scrollView" destination="cs6-hD-7IQ" id="eEG-fo-dLo"/>
+                        <outlet property="upGesture" destination="shJ-fG-LyS" id="IdU-Mq-CAz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1RQ-ci-Rp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="shJ-fG-LyS">
+                    <connections>
+                        <action selector="swipeUpFloor" destination="dqA-pe-5Ny" id="Gr2-ho-AHH"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="axm-0b-ukr">
+                    <connections>
+                        <action selector="swipeDownFloor" destination="dqA-pe-5Ny" id="58G-Hf-8qu"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1091" y="232"/>
         </scene>
     </scenes>
 </document>

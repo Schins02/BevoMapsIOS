@@ -10,9 +10,11 @@
 #import "CacheLayer.h"
 #import "DataLayer.h"
 
+#define CacheLimit 10485760
+
 @implementation ImageTasks
 
-+ (void)downloadImage:(UIImageView *)view
++ (void)downloadImage:(BuildingVC *)view
                  info:(NSDictionary *)map
                 floor:(NSString *)floor
                 cache:(NSURL *)url {
