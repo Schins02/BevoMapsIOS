@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BuildingVC.h"
+
+@class BuildingVC;
 
 @interface CacheLayer : NSObject
 
