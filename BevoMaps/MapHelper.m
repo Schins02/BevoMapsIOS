@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 BevoMaps. All rights reserved.
 //
 
-#define SpanDelta 0.004
+#define SpanDelta 0.003
 
 #import "MapHelper.h"
 

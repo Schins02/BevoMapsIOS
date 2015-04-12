@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapVC : UIViewController <UITextFieldDelegate>
+@interface MapVC : UIViewController 
 @property (strong, nonatomic) CacheLayer *cacheLayer;
 
 @end
