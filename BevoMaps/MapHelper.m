@@ -10,8 +10,9 @@
 
 #import "MapHelper.h"
 
-@interface MapHelper()
+@interface MapHelper() <CLLocationManagerDelegate>
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *userLocation;
 @property (strong, nonatomic) MKMapView *mapView;
 
@@ -29,13 +30,12 @@
 - (instancetype)initWithView:(MKMapView *)mapView {
   self = [super init];
   if (self) {
-    MKCoordinateRegion region;
-    region.center.latitude = 30.2861;
-    region.center.longitude = -97.739321;
-    region.span.latitudeDelta = SpanDelta;
-    region.span.longitudeDelta = SpanDelta;
-    [mapView setRegion:region];
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
+
     self.mapView = mapView;
+    [self centerTower];
   }
   return self;
 }
@@ -52,6 +52,15 @@
   [self.mapView setRegion:region];
 }
 
+- (void)centerTower {
+  MKCoordinateRegion region;
+  region.center.latitude = 30.2861;
+  region.center.longitude = -97.739321;
+  region.span.latitudeDelta = SpanDelta;
+  region.span.longitudeDelta = SpanDelta;
+  [self.mapView setRegion:region];
+}
+
 - (void)mapView:(MKMapView *)mapView
 didUpdateUserLocation:(MKUserLocation *)userLocation {
   self.userLocation = userLocation.location;
@@ -60,16 +69,10 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
   }
 }
 
-- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
-  CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
-  CLLocationManager *manager = [[CLLocationManager alloc] init];
-
-  if (status == kCLAuthorizationStatusNotDetermined) {
-    [manager requestWhenInUseAuthorization];
+- (void)locationManager:(CLLocationManager *)manager
+didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+  if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
     self.mapView.showsUserLocation = true;
-  }
-  else if (status == kCLAuthorizationStatusDenied) {
-    NSLog(@"Locations services denied.");
   }
 }
 
