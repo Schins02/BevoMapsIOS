@@ -26,8 +26,18 @@
 
 - (NSURL *)cachePath {
   if (!_cachePath) {
-    _cachePath = [[self.fileManager URLsForDirectory:NSCachesDirectory
+    NSURL *cacheParent = [[self.fileManager URLsForDirectory:NSCachesDirectory
                                            inDomains:NSUserDomainMask] lastObject];
+    _cachePath = [cacheParent URLByAppendingPathComponent:@"ImagesCache"];
+
+    BOOL directory = true;
+    if (![self.fileManager fileExistsAtPath:[_cachePath path] isDirectory:&directory]) {
+      NSLog(@"Creating image cache.");
+      [self.fileManager createDirectoryAtURL:_cachePath
+                 withIntermediateDirectories:false
+                                  attributes:nil
+                                       error:nil];
+    }
   }
   return _cachePath;
 }
@@ -47,10 +57,12 @@
   NSString *imageUrl = [map objectForKey:floor];
   NSURL *cacheUrl = [self.cachePath URLByAppendingPathComponent:[imageUrl lastPathComponent]];
 
-  if ([self.fileManager fileExistsAtPath:[cacheUrl path] isDirectory:false]) {
-    [ImageTasks loadImage:view path:cacheUrl];
+  if ([self.fileManager fileExistsAtPath:[cacheUrl path] isDirectory:nil]) {
+    NSLog(@"Loading from cache.");
+    view.image = [UIImage imageNamed:[cacheUrl path]];
   }
   else {
+    NSLog(@"Loading from network.");
     [ImageTasks downloadImage:view info:map floor:floor cache:self.cachePath];
   }
 }

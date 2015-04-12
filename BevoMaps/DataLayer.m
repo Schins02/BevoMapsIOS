@@ -12,36 +12,34 @@
 
 @implementation DataLayer
 
-+ (NSMutableDictionary *) buildingMap {
++ (NSDictionary *)buildingMap {
+  PFQuery *query = [BuildingJSON query];
+  [query whereKey:@"pk" equalTo:@"jsonObj"];
+  PFObject *buildingJSON = [query getFirstObject];
 
-    PFQuery *query = [BuildingJSON query];
-    [query whereKey:@"pk" equalTo:@"jsonObj"];
-    PFObject *buildingJSON = [query getFirstObject];
-    
-    if(!buildingJSON){
-        NSLog(@"Parse Query Failed");
-        return nil;
-    }
-    
-    return [buildingJSON objectForKey:@"Buildings"];
-}
-
-+ (NSArray *) markerArray {
-    
-    PFQuery *query = [BuildingJSON query];
-    [query whereKey:@"pk" equalTo:@"jsonObj"];
-    PFObject *buildingJSON = [query getFirstObject];
-    
-    if(!buildingJSON){
-        NSLog(@"Parse Query Failed");
-        return nil;
-    }
-    
-    return [buildingJSON objectForKey:@"Markers"];
-}
-
-+ (NSMutableDictionary *) searchMap{
+  if(!buildingJSON){
+    NSLog(@"Parse query failed.");
     return nil;
+  }
+
+  return [buildingJSON objectForKey:@"Buildings"];
+}
+
++ (NSArray *)markerArray {
+  PFQuery *query = [BuildingJSON query];
+  [query whereKey:@"pk" equalTo:@"jsonObj"];
+  PFObject *buildingJSON = [query getFirstObject];
+
+  if(!buildingJSON){
+    NSLog(@"Parse query failed.");
+    return nil;
+  }
+
+  return [buildingJSON objectForKey:@"Markers"];
+}
+
++ (NSDictionary *)searchMap{
+  return nil;
 }
 
 @end

@@ -20,8 +20,8 @@
 #define ShortName @"shortName"
 #define Thumbnail @"thumbnail"
 
-+ (NSMutableDictionary *) buildingMap;
-+ (NSArray *) markerArray;
-+ (NSMutableDictionary *) searchMap;
++ (NSDictionary *)buildingMap;
++ (NSArray *)markerArray;
++ (NSDictionary *)searchMap;
 
 @end

@@ -1,35 +1,79 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LcE-S5-uyr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="tmv-TF-nP5">
+            <objects>
+                <navigationController id="LcE-S5-uyr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lrb-B8-cSS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1NI-dF-onq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgO-lZ-CGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-451" y="232"/>
+        </scene>
+        <!--MapVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dcJ-8b-jjG">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dcJ-8b-jjG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKS-RN-Ioq">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Center" id="TAC-dh-2Be">
+                                        <connections>
+                                            <action selector="touchLocation:" destination="BYZ-38-t0r" id="k5A-4M-KMV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dcJ-8b-jjG" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="63z-Tw-5RR"/>
+                            <constraint firstAttribute="trailing" secondItem="dcJ-8b-jjG" secondAttribute="trailing" id="Bmt-47-mPL"/>
+                            <constraint firstItem="GKS-RN-Ioq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="D8P-bh-ot1"/>
+                            <constraint firstItem="GKS-RN-Ioq" firstAttribute="leading" secondItem="dcJ-8b-jjG" secondAttribute="leading" id="E7p-9p-KAQ"/>
+                            <constraint firstItem="dcJ-8b-jjG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bpZ-Np-Ojg"/>
+                            <constraint firstItem="dcJ-8b-jjG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="c70-Tf-PUr"/>
+                            <constraint firstItem="GKS-RN-Ioq" firstAttribute="trailing" secondItem="dcJ-8b-jjG" secondAttribute="trailing" id="dpS-Xe-rZd"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationItem key="navigationItem" id="Iia-vy-Bj8">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" id="Vhf-7y-Bm4">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                        </textField>
+                    </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="dcJ-8b-jjG" id="gQ8-2E-eCY"/>
+                        <outlet property="mapView" destination="dcJ-8b-jjG" id="lXS-6Q-pfZ"/>
+                        <outlet property="textField" destination="Vhf-7y-Bm4" id="OOc-cY-jw2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="276"/>
+            <point key="canvasLocation" x="307" y="232"/>
         </scene>
     </scenes>
 </document>

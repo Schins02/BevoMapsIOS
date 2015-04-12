@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
+#import "CacheLayer.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapVC : UIViewController
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) CacheLayer *cacheLayer;
 
 @end
 

@@ -8,14 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#define CacheLimit 10485760
+
 @interface ImageTasks : NSObject
 
 + (void)downloadImage:(UIImageView *)view
                  info:(NSDictionary *)map
                 floor:(NSString *)floor
-                cache:(NSURL *)path;
-
-+ (void)loadImage:(UIImageView *)view
-              path:(NSURL *)url;
+                cache:(NSURL *)url;
 
 @end
