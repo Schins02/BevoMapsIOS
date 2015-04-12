@@ -60,4 +60,16 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
   }
 }
 
+- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
+  CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+  CLLocationManager *manager = [[CLLocationManager alloc] init];
+
+  if (status == kCLAuthorizationStatusNotDetermined) {
+    [manager requestWhenInUseAuthorization];
+  }
+  else if (status == kCLAuthorizationStatusDenied) {
+    NSLog(@"Locations services denied.");
+  }
+}
+
 @end
