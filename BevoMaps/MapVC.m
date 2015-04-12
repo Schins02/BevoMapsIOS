@@ -8,6 +8,7 @@
 
 #import "MapVC.h"
 #import "MapHelper.h"
+#import "SearchLayer.h"
 
 #import <MapKit/MapKit.h>
 
@@ -46,4 +47,7 @@
   self.mapHelper.following = !self.mapHelper.following;
 }
 
+- (IBAction)userSearched:(UITextField *)sender {
+    [SearchLayer parseInputText:sender.text];
+}
 @end
