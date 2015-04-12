@@ -36,7 +36,6 @@
     region.span.longitudeDelta = SpanDelta;
     [mapView setRegion:region];
     self.mapView = mapView;
-    [self configLocation];
   }
   return self;
 }
@@ -53,7 +52,15 @@
   [self.mapView setRegion:region];
 }
 
-- (void)configLocation {
+- (void)mapView:(MKMapView *)mapView
+didUpdateUserLocation:(MKUserLocation *)userLocation {
+  self.userLocation = userLocation.location;
+  if (self.following) {
+    [self centerUserLocation];
+  }
+}
+
+- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
   CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
   CLLocationManager *manager = [[CLLocationManager alloc] init];
 
@@ -62,14 +69,6 @@
   }
   else if (status == kCLAuthorizationStatusDenied) {
     NSLog(@"Locations services denied.");
-  }
-}
-
-- (void)mapView:(MKMapView *)mapView
-didUpdateUserLocation:(MKUserLocation *)userLocation {
-  self.userLocation = userLocation.location;
-  if (self.following) {
-    [self centerUserLocation];
   }
 }
 
