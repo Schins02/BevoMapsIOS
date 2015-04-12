@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 BevoMaps. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "CacheLayer.h"
+
+#import <UIKit/UIKit.h>
 
 @interface BuildingVC : UIViewController
 
