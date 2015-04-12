@@ -48,7 +48,9 @@
   return self;
 }
 
-- (void)loadImage:(UIImageView *)view building:(NSString *)building floor:(NSString *)floor {
+- (void)loadImage:(UIImageView *)view
+         building:(NSString *)building
+            floor:(NSString *)floor {
   if (floor == nil) {
     floor = [self.buildingMap objectForKey:DefaultFloor];
   }

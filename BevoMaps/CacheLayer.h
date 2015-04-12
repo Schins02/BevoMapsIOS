@@ -10,6 +10,8 @@
 
 @interface CacheLayer : NSObject
 
-- (void)loadImage:(UIImage *)view building:(NSString *)building floor:(NSString *)floor;
+- (void)loadImage:(UIImage *)view
+         building:(NSString *)building
+            floor:(NSString *)floor;
 
 @end
