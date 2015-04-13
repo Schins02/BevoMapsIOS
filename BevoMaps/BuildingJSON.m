@@ -11,12 +11,12 @@
 
 @implementation BuildingJSON
 
-+ (void) load {
-    [self registerSubclass];
++ (void)load {
+  [self registerSubclass];
 }
 
-+ (NSString *) parseClassName {
-    return @"BuildingJSON";
++ (NSString *)parseClassName {
+  return @"BuildingJSON";
 }
 
 @dynamic json;
