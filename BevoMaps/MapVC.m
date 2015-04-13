@@ -55,8 +55,17 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-  [self performSegueWithIdentifier:@"showBuilding" sender:self];
+  self.searchResults = [SearchLayer parseInputText:textField.text];
+  if([self.searchResults count] > 0)
+        [self performSegueWithIdentifier:@"showBuilding" sender:self];
+
   return false;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    BuildingVC *buildingVC = (BuildingVC*) segue.destinationViewController;
+    buildingVC.building = self.searchResults[@"building"];
+    buildingVC.floor = self.searchResults[@"floor"];
 }
 
 - (IBAction)touchLocation:(UIBarButtonItem *)sender {
