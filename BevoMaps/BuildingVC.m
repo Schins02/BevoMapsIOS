@@ -32,6 +32,7 @@
   [self.imageView sizeToFit];
   self.scrollView.contentSize = image ? image.size : CGSizeZero;
   self.scrollView.zoomScale = .15;
+  self.scrollView.backgroundColor = [UIColor colorWithRed:232.0/255.0 green:221.0/255.0 blue:189.0/255.0 alpha:1.0];
 }
 
 - (void)setScrollView:(UIScrollView *)scrollView {
