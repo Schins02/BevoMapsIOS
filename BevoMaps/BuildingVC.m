@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 BevoMaps. All rights reserved.
 //
 
+#define IPhone6 1042
+#define IPhone5s 888
+
 #import "BuildingVC.h"
 #import "SearchLayer.h"
 
@@ -70,9 +73,7 @@
   [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.upGesture];
   [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.downGesture];
     
-  UIEdgeInsets insets = UIEdgeInsetsMake(50, 30, 0, 0);
-  self.scrollView.contentInset = insets;
-  self.scrollView.scrollIndicatorInsets = insets;
+  [self adjustForScreenSize];
 
   [self.cacheLayer loadImage:self building:self.building floor:self.floor];
 }
@@ -97,6 +98,22 @@
     self.floor = floors[index];
     [self.cacheLayer loadImage:self building:self.building floor:self.floor];
   }
+}
+
+- (void)adjustForScreenSize {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    NSInteger totalScreenSize = screenRect.size.width + screenRect.size.height;
+    UIEdgeInsets insets;
+    switch(totalScreenSize){
+        case IPhone6:
+            insets = UIEdgeInsetsMake(80, 30, 0, 0);
+            break;
+        case IPhone5s:
+            insets = UIEdgeInsetsMake(50, 30, 0, 0);
+            break;
+    }
+    self.scrollView.contentInset = insets;
+    self.scrollView.scrollIndicatorInsets = insets;
 }
 
 @end
