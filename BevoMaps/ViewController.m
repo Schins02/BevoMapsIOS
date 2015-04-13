@@ -18,6 +18,7 @@
 @property (nonatomic) unsigned floor;
 @property (weak, nonatomic) IBOutlet UITextField *search;
 @property (weak, nonatomic) IBOutlet UILabel *floorLabel;
+@property (strong, nonatomic) UIView *transparentView;
 
 @end
 
@@ -33,10 +34,13 @@
 - (IBAction)searchStart:(UITextField *)sender
 {
     sender.text = @"";
+    self.transparentView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.20];
+    [self.view addSubview:self.transparentView];
 }
 
 - (IBAction)searchEnd:(UITextField *)sender
 {
+    [self.transparentView removeFromSuperview];
     if ([self textFieldShouldReturn:sender])
     {
         [self handleSearch:sender];
@@ -65,6 +69,15 @@
  * End search code
  *
  */
+
+-(UIView *)transparentView
+{
+    if (!_transparentView)
+    {
+        _transparentView = [[UIView alloc] initWithFrame:self.view.frame];
+    }
+    return _transparentView;
+}
 
 -(void)setFloor:(unsigned int)floor
 {
