@@ -59,7 +59,7 @@
   self.upGesture.direction = UISwipeGestureRecognizerDirectionUp;
 
   self.downGesture.numberOfTouchesRequired = 2;
-  self.downGesture.direction = UISwipeGestureRecognizerDirectionUp;
+  self.downGesture.direction = UISwipeGestureRecognizerDirectionDown;
 
   self.scrollView.panGestureRecognizer.maximumNumberOfTouches = 1;
   [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.upGesture];
