@@ -9,6 +9,7 @@
 #import "MapVC.h"
 #import "MapHelper.h"
 #import "SearchLayer.h"
+#import "BuildingVC.h"
 
 #import <MapKit/MapKit.h>
 
@@ -18,10 +19,18 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) NSDictionary *searchResults;
 
 @end
 
 @implementation MapVC
+
+- (NSDictionary *)getSearchResults {
+    if(!_searchResults){
+        _searchResults = [[NSDictionary alloc] init];
+    }
+    return _searchResults;
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
