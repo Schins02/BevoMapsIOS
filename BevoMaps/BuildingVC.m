@@ -44,7 +44,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.imageView = [[UIImageView alloc] init];
+  self.imageView = [UIImageView new];
   [self.scrollView addSubview:self.imageView];
 
   self.textField = [[UITextField alloc] initWithFrame:
@@ -60,9 +60,9 @@
 
   self.downGesture.numberOfTouchesRequired = 2;
   self.downGesture.direction = UISwipeGestureRecognizerDirectionUp;
-  [self.downGesture requireGestureRecognizerToFail:self.upGesture];
 
   self.scrollView.panGestureRecognizer.maximumNumberOfTouches = 1;
+  [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.upGesture];
   [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.downGesture];
 
 //  [self.cacheLayer loadImage:self building:self.building floor:self.floor];

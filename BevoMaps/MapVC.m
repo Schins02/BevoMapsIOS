@@ -27,18 +27,18 @@
 
 - (NSDictionary *)searchResults {
   if(!_searchResults){
-    _searchResults = [[NSDictionary alloc] init];
+    _searchResults = [NSDictionary new];
   }
   return _searchResults;
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.cacheLayer = [[CacheLayer alloc] init];
-  
+  self.cacheLayer = [CacheLayer new];
+
   self.mapHelper = [[MapHelper alloc] initWithView:self.mapView];
   self.mapView.delegate = self.mapHelper;
-  
+
   self.textField.delegate = self;
 }
 
