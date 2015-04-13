@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UISwipeGestureRecognizer *upGesture;
 @property (weak, nonatomic) IBOutlet UISwipeGestureRecognizer *downGesture;
 
+@property float userZoomScale;
+
 @end
 
 @implementation BuildingVC
@@ -35,7 +37,7 @@
   self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
   [self.imageView sizeToFit];
   self.scrollView.contentSize = image ? image.size : CGSizeZero;
-  self.scrollView.zoomScale = .15;
+  self.scrollView.zoomScale = self.userZoomScale;
 }
 
 - (void)setScrollView:(UIScrollView *)scrollView {
@@ -83,6 +85,7 @@
 }
 
 - (IBAction)swipeUpFloor {
+  self.userZoomScale = self.scrollView.zoomScale;
   NSArray *floors = [self.cacheLayer floorNames:self.building];
   NSInteger index = [floors indexOfObject:self.floor];
   if (--index > 0) {
@@ -92,6 +95,7 @@
 }
 
 - (IBAction)swipeDownFloor {
+  self.userZoomScale = self.scrollView.zoomScale;
   NSArray *floors = [self.cacheLayer floorNames:self.building];
   NSInteger index = [floors indexOfObject:self.floor];
   if (++index < floors.count) {
@@ -114,6 +118,7 @@
     }
     self.scrollView.contentInset = insets;
     self.scrollView.scrollIndicatorInsets = insets;
+    self.userZoomScale = .15;
 }
 
 @end
