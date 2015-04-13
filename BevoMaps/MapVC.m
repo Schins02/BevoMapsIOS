@@ -25,7 +25,7 @@
 
 @implementation MapVC
 
--(NSDictionary *) getSearchResults{
+- (NSDictionary *)getSearchResults {
     if(!_searchResults){
         _searchResults = [[NSDictionary alloc] init];
     }
@@ -63,6 +63,5 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
 }
 @end
