@@ -69,6 +69,11 @@
   self.scrollView.panGestureRecognizer.maximumNumberOfTouches = 1;
   [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.upGesture];
   [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.downGesture];
+    
+    
+  UIEdgeInsets insets = UIEdgeInsetsMake(50, 30, 0, 0);
+  self.scrollView.contentInset = insets;
+  self.scrollView.scrollIndicatorInsets = insets;
 
   [self.cacheLayer loadImage:self building:self.building floor:self.floor];
 }
