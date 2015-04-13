@@ -60,11 +60,18 @@
   NSURL *cacheUrl = [self.cachePath URLByAppendingPathComponent:[imageUrl lastPathComponent]];
 
   if ([self.fileManager fileExistsAtPath:[cacheUrl path] isDirectory:nil]) {
+    NSLog(@"*** CacheLayer ***: Loading from cache.");
     view.image = [UIImage imageNamed:[cacheUrl path]];
   }
   else {
+    NSLog(@"*** CacheLayer ***: Loading from network.");
     [ImageTasks downloadImage:view info:map floor:floor cache:self.cachePath];
   }
+}
+
+- (NSArray *)floorNames:(NSString *)building {
+  NSDictionary *map = [self.buildingMap objectForKey:building];
+  return [[map objectForKey:FloorNames] componentsSeparatedByString:@" "];
 }
 
 - (BOOL)isBuilding:(NSString *)building {

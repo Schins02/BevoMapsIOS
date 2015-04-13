@@ -27,15 +27,19 @@
 }
 
 -(void)setImage:(UIImage *)image {
+  self.scrollView.zoomScale = 1.0;
   self.imageView.image = image;
   self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
   [self.imageView sizeToFit];
   self.scrollView.contentSize = image ? image.size : CGSizeZero;
   self.scrollView.zoomScale = .15;
-  self.scrollView.backgroundColor = [UIColor colorWithRed:232.0/255.0 green:221.0/255.0 blue:189.0/255.0 alpha:1.0];
 }
 
 - (void)setScrollView:(UIScrollView *)scrollView {
+  scrollView.backgroundColor = [UIColor colorWithRed:232/255.0
+                                               green:221/255.0
+                                                blue:189/255.0
+                                               alpha:1];
   scrollView.minimumZoomScale = 0.1;
   scrollView.maximumZoomScale = 2.0;
   scrollView.delegate = self;
@@ -74,11 +78,21 @@
 }
 
 - (IBAction)swipeUpFloor {
-  NSLog(@"Change up floor.");
+  NSArray *floors = [self.cacheLayer floorNames:self.building];
+  NSInteger index = [floors indexOfObject:self.floor];
+  if (--index > 0) {
+    self.floor = floors[index];
+    [self.cacheLayer loadImage:self building:self.building floor:self.floor];
+  }
 }
 
 - (IBAction)swipeDownFloor {
-  NSLog(@"Change down floor.");
+  NSArray *floors = [self.cacheLayer floorNames:self.building];
+  NSInteger index = [floors indexOfObject:self.floor];
+  if (++index < floors.count) {
+    self.floor = floors[index];
+    [self.cacheLayer loadImage:self building:self.building floor:self.floor];
+  }
 }
 
 @end

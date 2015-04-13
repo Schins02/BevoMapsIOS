@@ -15,7 +15,7 @@
 - (void)loadImage:(BuildingVC *)view
          building:(NSString *)building
             floor:(NSString *)floor;
-
+- (NSArray *)floorNames:(NSString *)building;
 - (BOOL)isBuilding:(NSString *)building;
 
 @end
