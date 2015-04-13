@@ -9,9 +9,10 @@
 #import "BuildingVC.h"
 #import "SearchLayer.h"
 
-@interface BuildingVC () <UIScrollViewDelegate>
+@interface BuildingVC () <UIScrollViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UITextField *textField;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UISwipeGestureRecognizer *upGesture;
@@ -46,6 +47,14 @@
   self.imageView = [[UIImageView alloc] init];
   [self.scrollView addSubview:self.imageView];
 
+  self.textField = [[UITextField alloc] initWithFrame:
+                    CGRectMake(0, 0, self.navigationController.navigationBar.frame.size.width - 160, 30)];
+  [self.textField setBorderStyle:UITextBorderStyleRoundedRect];
+  [self.textField setFont:[UIFont systemFontOfSize:14]];
+  self.textField.delegate = self;
+  self.textField.placeholder = @"Search";
+  self.navigationItem.titleView = self.textField;
+
   self.upGesture.numberOfTouchesRequired = 2;
   self.upGesture.direction = UISwipeGestureRecognizerDirectionUp;
 
@@ -56,7 +65,7 @@
   self.scrollView.panGestureRecognizer.maximumNumberOfTouches = 1;
   [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.downGesture];
 
-  [self.cacheLayer loadImage:self building:self.building floor:self.floor];
+//  [self.cacheLayer loadImage:self building:self.building floor:self.floor];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {

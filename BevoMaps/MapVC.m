@@ -12,7 +12,7 @@
 
 #import <MapKit/MapKit.h>
 
-@interface MapVC ()
+@interface MapVC () <UITextFieldDelegate>
 
 @property (strong, nonatomic) MapHelper *mapHelper;
 
@@ -29,12 +29,14 @@
 
   self.mapHelper = [[MapHelper alloc] initWithView:self.mapView];
   self.mapView.delegate = self.mapHelper;
+
+  self.textField.delegate = self;
 }
 
 - (void)viewWillLayoutSubviews {
   [super viewWillLayoutSubviews];
   CGRect frame = self.textField.frame;
-  frame.size.width = 10000;
+  frame.size.width = self.navigationController.navigationBar.frame.size.width;
   self.textField.frame = frame;
 }
 
@@ -43,11 +45,13 @@
   NSLog(@"Low memory warning.");
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [self performSegueWithIdentifier:@"showBuilding" sender:self];
+  return false;
+}
+
 - (IBAction)touchLocation:(UIBarButtonItem *)sender {
   self.mapHelper.following = !self.mapHelper.following;
 }
 
-- (IBAction)userSearched:(UITextField *)sender {
-    [SearchLayer parseInputText:sender.text];
-}
 @end

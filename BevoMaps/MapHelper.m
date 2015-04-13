@@ -49,7 +49,7 @@
   region.center.longitude = self.userLocation.coordinate.longitude;
   region.span.latitudeDelta = SpanDelta;
   region.span.longitudeDelta = SpanDelta;
-  [self.mapView setRegion:region];
+  [self.mapView setRegion:region animated:true];
 }
 
 - (void)centerTower {
