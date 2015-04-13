@@ -8,37 +8,37 @@
 
 #import "MapVC.h"
 #import "MapHelper.h"
-#import "SearchLayer.h"
 #import "BuildingVC.h"
+#import "SearchLayer.h"
 
 #import <MapKit/MapKit.h>
 
 @interface MapVC () <UITextFieldDelegate>
 
 @property (strong, nonatomic) MapHelper *mapHelper;
+@property (strong, nonatomic) NSDictionary *searchResults;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (strong, nonatomic) NSDictionary *searchResults;
 
 @end
 
 @implementation MapVC
 
-- (NSDictionary *)getSearchResults {
-    if(!_searchResults){
-        _searchResults = [[NSDictionary alloc] init];
-    }
-    return _searchResults;
+- (NSDictionary *)searchResults {
+  if(!_searchResults){
+    _searchResults = [[NSDictionary alloc] init];
+  }
+  return _searchResults;
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.cacheLayer = [[CacheLayer alloc] init];
-
+  
   self.mapHelper = [[MapHelper alloc] initWithView:self.mapView];
   self.mapView.delegate = self.mapHelper;
-
+  
   self.textField.delegate = self;
 }
 
