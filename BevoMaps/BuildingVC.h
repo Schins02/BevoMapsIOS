@@ -16,5 +16,7 @@
 @property (strong, nonatomic) NSString *building, *floor;
 @property (strong, nonatomic) UIImage *image;
 
+@property (strong, nonatomic) NSString *searchText;
+
 @end
 

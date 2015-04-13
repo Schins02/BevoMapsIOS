@@ -18,8 +18,8 @@
 @interface BuildingVC () <UIScrollViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) UIImageView *imageView;
-@property (strong, nonatomic) UITextField *textField;
 
+@property (strong, nonatomic) UITextField *textField;
 @property (strong, nonatomic) UIView *bgView;
 @property (strong, nonatomic) UITapGestureRecognizer *bgRecognizer;
 
@@ -67,6 +67,7 @@
     [self.textField setFont:[UIFont systemFontOfSize:14]];
     self.textField.delegate = self;
     self.textField.placeholder = @"Search";
+    self.textField.text = self.searchText;
     self.navigationItem.titleView = self.textField;
     
     self.upGesture.numberOfTouchesRequired = 2;

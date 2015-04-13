@@ -32,82 +32,83 @@
 @implementation MapVC
 
 - (void)viewDidLoad {
-  [super viewDidLoad];
-  self.cacheLayer = [CacheLayer new];
-
-  self.mapHelper = [[MapHelper alloc] initWithView:self.mapView];
-  self.mapView.delegate = self.mapHelper;
-
-  self.bgView = [[UIView alloc] initWithFrame:self.view.frame];
-  self.bgView.backgroundColor = [UIColor clearColor];
-  self.bgRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                              action:@selector(touchBG)];
-  [self.bgView addGestureRecognizer:self.bgRecognizer];
-
-  self.textField.delegate = self;
+    [super viewDidLoad];
+    self.cacheLayer = [CacheLayer new];
+    
+    self.mapHelper = [[MapHelper alloc] initWithView:self.mapView];
+    self.mapView.delegate = self.mapHelper;
+    
+    self.bgView = [[UIView alloc] initWithFrame:self.view.frame];
+    self.bgView.backgroundColor = [UIColor clearColor];
+    self.bgRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                action:@selector(touchBG)];
+    [self.bgView addGestureRecognizer:self.bgRecognizer];
+    
+    self.textField.delegate = self;
 }
 
 - (void)viewWillLayoutSubviews {
-  [super viewWillLayoutSubviews];
-  CGRect frame = self.textField.frame;
-  frame.size.width = self.navigationController.navigationBar.frame.size.width;
-  self.textField.frame = frame;
+    [super viewWillLayoutSubviews];
+    CGRect frame = self.textField.frame;
+    frame.size.width = self.navigationController.navigationBar.frame.size.width;
+    self.textField.frame = frame;
 }
 
 - (void)createIntent:(NSString *)building floor:(NSString *)floor {
-  self.building = building;
-  self.floor = floor;
-  [self performSegueWithIdentifier:@"showBuilding" sender:self];
+    self.building = building;
+    self.floor = floor;
+    [self performSegueWithIdentifier:@"showBuilding" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  BuildingVC *controller = (BuildingVC *)segue.destinationViewController;
-  controller.cacheLayer = self.cacheLayer;
-  controller.building = self.building;
-  controller.floor = self.floor;
+    BuildingVC *controller = (BuildingVC *)segue.destinationViewController;
+    controller.cacheLayer = self.cacheLayer;
+    controller.building = self.building;
+    controller.floor = self.floor;
+    controller.searchText = self.textField.text;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-  [textField resignFirstResponder];
-  NSDictionary *map = [SearchLayer parseInputText:textField.text];
-  NSString *building = [map objectForKey:@"building"];
-  
-  if (building != nil && [self.cacheLayer isBuilding:building]) {
-    [self createIntent:building floor:[map objectForKey:@"floor"]];
-  }
-  return false;
+    [textField resignFirstResponder];
+    NSDictionary *map = [SearchLayer parseInputText:textField.text];
+    NSString *building = [map objectForKey:@"building"];
+    
+    if (building != nil && [self.cacheLayer isBuilding:building]) {
+        [self createIntent:building floor:[map objectForKey:@"floor"]];
+    }
+    return false;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-  [self.view addSubview:self.bgView];
-  [UIView animateWithDuration:BGFade animations:^{
-    self.bgView.backgroundColor = [UIColor colorWithRed:0
-                                                  green:0
-                                                   blue:0
-                                                  alpha:BGAlpha];
-
-  }];
+    [self.view addSubview:self.bgView];
+    [UIView animateWithDuration:BGFade animations:^{
+        self.bgView.backgroundColor = [UIColor colorWithRed:0
+                                                      green:0
+                                                       blue:0
+                                                      alpha:BGAlpha];
+        
+    }];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-  [UIView animateWithDuration:BGFade animations:^{
-    self.bgView.backgroundColor = [UIColor colorWithRed:0
-                                                  green:0
-                                                   blue:0
-                                                  alpha:0];
-  } completion:^(BOOL finished) {
-    [self.bgView removeFromSuperview];
-  }];
+    [UIView animateWithDuration:BGFade animations:^{
+        self.bgView.backgroundColor = [UIColor colorWithRed:0
+                                                      green:0
+                                                       blue:0
+                                                      alpha:0];
+    } completion:^(BOOL finished) {
+        [self.bgView removeFromSuperview];
+    }];
 }
 
 - (void)touchBG {
-  if ([self.textField isFirstResponder]) {
-    [self.textField resignFirstResponder];
-  }
+    if ([self.textField isFirstResponder]) {
+        [self.textField resignFirstResponder];
+    }
 }
 
 - (IBAction)touchLocation:(UIBarButtonItem *)sender {
-  self.mapHelper.following = !self.mapHelper.following;
+    self.mapHelper.following = !self.mapHelper.following;
 }
 
 @end
