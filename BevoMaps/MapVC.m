@@ -58,8 +58,8 @@
 
 - (IBAction)userSearched:(UITextField *)sender {
     self.searchResults = [SearchLayer parseInputText:sender.text];
-    if([self.searchResults count] > 0)
-        [self performSegueWithIdentifier:@"showBuilding" sender:self];
+    //if([self.searchResults count] > 0)
+        //[self performSegueWithIdentifier:@"showBuilding" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
