@@ -48,6 +48,7 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [textField resignFirstResponder];
   NSDictionary *map = [SearchLayer parseInputText:textField.text];
   NSString *building = [map objectForKey:@"building"];
 

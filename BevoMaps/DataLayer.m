@@ -18,7 +18,7 @@
   PFObject *buildingJSON = [query getFirstObject];
 
   if(!buildingJSON){
-    NSLog(@"Parse query failed.");
+    NSLog(@"*** DataLayer ***: Parse query failed.");
     return nil;
   }
 
@@ -31,7 +31,7 @@
   PFObject *buildingJSON = [query getFirstObject];
 
   if(!buildingJSON){
-    NSLog(@"Parse query failed.");
+    NSLog(@"*** DataLayer ***: Parse query failed.");
     return nil;
   }
 

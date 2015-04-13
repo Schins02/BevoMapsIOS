@@ -32,7 +32,7 @@
 
     BOOL directory = true;
     if (![self.fileManager fileExistsAtPath:[_cachePath path] isDirectory:&directory]) {
-      NSLog(@"Creating image cache.");
+      NSLog(@"*** CacheLayer ***: Creating image cache.");
       [self.fileManager createDirectoryAtURL:_cachePath
                  withIntermediateDirectories:false
                                   attributes:nil
@@ -60,11 +60,9 @@
   NSURL *cacheUrl = [self.cachePath URLByAppendingPathComponent:[imageUrl lastPathComponent]];
 
   if ([self.fileManager fileExistsAtPath:[cacheUrl path] isDirectory:nil]) {
-    NSLog(@"Loading from cache.");
     view.image = [UIImage imageNamed:[cacheUrl path]];
   }
   else {
-    NSLog(@"Loading from network.");
     [ImageTasks downloadImage:view info:map floor:floor cache:self.cachePath];
   }
 }
