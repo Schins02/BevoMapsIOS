@@ -51,11 +51,11 @@
 - (void)loadImage:(BuildingVC *)view
          building:(NSString *)building
             floor:(NSString *)floor {
-  if ([self.buildingMap objectForKey:floor] == nil) {
+  NSDictionary *map = [self.buildingMap objectForKey:building];
+  if ([map objectForKey:floor] == nil) {
     floor = [self.buildingMap objectForKey:DefaultFloor];
   }
 
-  NSDictionary *map = [self.buildingMap objectForKey:building];
   NSString *imageUrl = [map objectForKey:floor];
   NSURL *cacheUrl = [self.cachePath URLByAppendingPathComponent:[imageUrl lastPathComponent]];
 
@@ -67,6 +67,10 @@
     NSLog(@"Loading from network.");
     [ImageTasks downloadImage:view info:map floor:floor cache:self.cachePath];
   }
+}
+
+- (BOOL)isBuilding:(NSString *)building {
+  return [self.buildingMap objectForKey:building] != nil;
 }
 
 - (void)buildingTask {

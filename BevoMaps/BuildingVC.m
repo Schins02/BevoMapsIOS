@@ -65,7 +65,7 @@
   [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.upGesture];
   [self.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.downGesture];
 
-//  [self.cacheLayer loadImage:self building:self.building floor:self.floor];
+  [self.cacheLayer loadImage:self building:self.building floor:self.floor];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {

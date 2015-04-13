@@ -16,4 +16,6 @@
          building:(NSString *)building
             floor:(NSString *)floor;
 
+- (BOOL)isBuilding:(NSString *)building;
+
 @end

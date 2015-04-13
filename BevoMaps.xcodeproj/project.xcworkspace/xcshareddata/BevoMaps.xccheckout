@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>96C61B94-674C-4E6D-9D4F-6370ADCB70E6</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>BevoMaps</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CF0A516DEC3D091FF5526B1E95496F45774764B6</key>
 		<string>https://github.com/tungoo7/BevoMapsIOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BevoMaps.xcodeproj/project.xcworkspace</string>
+	<string>BevoMaps.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CF0A516DEC3D091FF5526B1E95496F45774764B6</key>

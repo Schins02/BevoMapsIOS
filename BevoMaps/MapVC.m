@@ -15,8 +15,8 @@
 
 @interface MapVC () <UITextFieldDelegate>
 
+@property (strong, nonatomic) NSString *building, *floor;
 @property (strong, nonatomic) MapHelper *mapHelper;
-@property (strong, nonatomic) NSDictionary *searchResults;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -25,20 +25,13 @@
 
 @implementation MapVC
 
-- (NSDictionary *)searchResults {
-  if(!_searchResults){
-    _searchResults = [NSDictionary new];
-  }
-  return _searchResults;
-}
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.cacheLayer = [CacheLayer new];
-
+  
   self.mapHelper = [[MapHelper alloc] initWithView:self.mapView];
   self.mapView.delegate = self.mapHelper;
-
+  
   self.textField.delegate = self;
 }
 
@@ -55,17 +48,26 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-  self.searchResults = [SearchLayer parseInputText:textField.text];
-  if([self.searchResults count] > 0)
-        [self performSegueWithIdentifier:@"showBuilding" sender:self];
+  NSDictionary *map = [SearchLayer parseInputText:textField.text];
+  NSString *building = [map objectForKey:@"building"];
 
+  if (building != nil && [self.cacheLayer isBuilding:building]) {
+    [self createIntent:building floor:[map objectForKey:@"floor"]];
+  }
   return false;
 }
 
+- (void)createIntent:(NSString *)building floor:(NSString *)floor {
+  self.building = building;
+  self.floor = floor;
+  [self performSegueWithIdentifier:@"showBuilding" sender:self];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    BuildingVC *buildingVC = (BuildingVC*) segue.destinationViewController;
-    buildingVC.building = self.searchResults[@"building"];
-    buildingVC.floor = self.searchResults[@"floor"];
+  BuildingVC *controller = (BuildingVC *)segue.destinationViewController;
+  controller.cacheLayer = self.cacheLayer;
+  controller.building = self.building;
+  controller.floor = self.floor;
 }
 
 - (IBAction)touchLocation:(UIBarButtonItem *)sender {
