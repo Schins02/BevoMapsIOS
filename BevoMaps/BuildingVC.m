@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UISwipeGestureRecognizer *upGesture;
 @property (weak, nonatomic) IBOutlet UISwipeGestureRecognizer *downGesture;
 
+@property float userZoomScale;
+
 @end
 
 @implementation BuildingVC
@@ -36,12 +38,12 @@
 }
 
 -(void)setImage:(UIImage *)image {
-    self.scrollView.zoomScale = 1.0;
-    self.imageView.image = image;
-    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-    [self.imageView sizeToFit];
-    self.scrollView.contentSize = image ? image.size : CGSizeZero;
-    self.scrollView.zoomScale = .15;
+  self.scrollView.zoomScale = 1.0;
+  self.imageView.image = image;
+  self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+  [self.imageView sizeToFit];
+  self.scrollView.contentSize = image ? image.size : CGSizeZero;
+  self.scrollView.zoomScale = self.userZoomScale;
 }
 
 - (void)setScrollView:(UIScrollView *)scrollView {
@@ -96,21 +98,23 @@
 }
 
 - (IBAction)swipeUpFloor {
-    NSArray *floors = [self.cacheLayer floorNames:self.building];
-    NSInteger index = [floors indexOfObject:self.floor];
-    if (--index > 0) {
-        self.floor = floors[index];
-        [self.cacheLayer loadImage:self building:self.building floor:self.floor];
-    }
+  self.userZoomScale = self.scrollView.zoomScale;
+  NSArray *floors = [self.cacheLayer floorNames:self.building];
+  NSInteger index = [floors indexOfObject:self.floor];
+  if (--index > 0) {
+    self.floor = floors[index];
+    [self.cacheLayer loadImage:self building:self.building floor:self.floor];
+  }
 }
 
 - (IBAction)swipeDownFloor {
-    NSArray *floors = [self.cacheLayer floorNames:self.building];
-    NSInteger index = [floors indexOfObject:self.floor];
-    if (++index < floors.count) {
-        self.floor = floors[index];
-        [self.cacheLayer loadImage:self building:self.building floor:self.floor];
-    }
+  self.userZoomScale = self.scrollView.zoomScale;
+  NSArray *floors = [self.cacheLayer floorNames:self.building];
+  NSInteger index = [floors indexOfObject:self.floor];
+  if (++index < floors.count) {
+    self.floor = floors[index];
+    [self.cacheLayer loadImage:self building:self.building floor:self.floor];
+  }
 }
 
 - (void)adjustForScreenSize {
@@ -127,6 +131,7 @@
     }
     self.scrollView.contentInset = insets;
     self.scrollView.scrollIndicatorInsets = insets;
+    self.userZoomScale = .15;
 }
 
 - (void)createIntent:(NSString *)building floor:(NSString *)floor {
