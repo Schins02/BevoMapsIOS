@@ -13,10 +13,8 @@
 @interface BuildingVC : UIViewController
 
 @property (strong, nonatomic) CacheLayer *cacheLayer;
-@property (strong, nonatomic) NSString *building, *floor;
+@property (strong, nonatomic) NSString *building, *floor, *text;
 @property (strong, nonatomic) UIImage *image;
-
-@property (strong, nonatomic) NSString *searchText;
 
 @end
 

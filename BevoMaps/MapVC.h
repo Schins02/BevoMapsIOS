@@ -10,7 +10,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapVC : UIViewController 
+@interface MapVC : UIViewController
+
 @property (strong, nonatomic) CacheLayer *cacheLayer;
 
 @end

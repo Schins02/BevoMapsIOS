@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LcE-S5-uyr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LcE-S5-uyr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
@@ -114,12 +114,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1RQ-ci-Rp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="shJ-fG-LyS">
                     <connections>
-                        <action selector="swipeUpFloor" destination="dqA-pe-5Ny" id="Gr2-ho-AHH"/>
+                        <action selector="changeUpFloor" destination="dqA-pe-5Ny" id="KQP-30-OVK"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="axm-0b-ukr">
                     <connections>
-                        <action selector="swipeDownFloor" destination="dqA-pe-5Ny" id="58G-Hf-8qu"/>
+                        <action selector="changeDownFloor" destination="dqA-pe-5Ny" id="wOY-n8-Wm8"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

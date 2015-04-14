@@ -65,7 +65,7 @@
     controller.cacheLayer = self.cacheLayer;
     controller.building = self.building;
     controller.floor = self.floor;
-    controller.searchText = self.textField.text;
+    controller.text = self.textField.text;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
