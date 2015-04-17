@@ -39,7 +39,16 @@
 }
 
 + (NSDictionary *)searchMap{
-  return nil;
+    PFQuery *query = [BuildingJSON query];
+    [query whereKey:@"pk" equalTo:@"jsonObj"];
+    PFObject *buildingJSON = [query getFirstObject];
+    
+    if(!buildingJSON){
+        NSLog(@"*** DataLayer ***: Parse query failed.");
+        return nil;
+    }
+    
+    return [buildingJSON objectForKey:@"SearchMap"];
 }
 
 @end
