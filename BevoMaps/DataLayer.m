@@ -34,7 +34,7 @@
     return [buildingJSON objectForKey:@"Markers"];
 }
 
-+ (NSDictionary *)searchMap{
++ (NSDictionary *)searchMap {
     PFObject *buildingJSON = [DataLayer getBuildingJSON];
     
     if(!buildingJSON){
@@ -45,7 +45,7 @@
     return [buildingJSON objectForKey:@"SearchMap"];
 }
 
-+ (PFObject *)getBuildingJSON{
++ (PFObject *)getBuildingJSON {
     PFQuery *query = [BuildingJSON query];
     [query whereKey:@"pk" equalTo:@"jsonObj"];
     return [query getFirstObject];
