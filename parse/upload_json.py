@@ -17,8 +17,8 @@ marker_list_fields = ["shortName", "longName", "latitude", "longitude", "thumbna
 
 # iterate through files in current dir and load json --------------------------
 
-for root, dirs, files, in os.walk(os.getcwd()) :
-	for name in files : 
+for root, dirs, files, in os.walk(os.getcwd()):
+	for name in files: 
 		if(name.endswith(".txt")):
 
 			#format: file name => building => GDC.txt
@@ -30,10 +30,10 @@ for root, dirs, files, in os.walk(os.getcwd()) :
 			url_data["Buildings"][building_name] = {}
 
 			file = open(name)
-			for line in iter(file) :
+			for line in iter(file):
 
 				floor_and_url = line.split("_")
-				if floor_and_url[0] not in marker_list_fields :
+				if floor_and_url[0] not in marker_list_fields:
 					url_data["Buildings"][building_name][floor_and_url[0]] = floor_and_url[1][0:-1]
 
 

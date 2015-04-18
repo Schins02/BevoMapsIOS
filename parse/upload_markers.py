@@ -16,17 +16,17 @@ marker_list_fields = ["shortName", "longName", "latitude", "longitude", "thumbna
 
 # iterate through files in current dir and load json --------------------------
 
-for root, dirs, files, in os.walk(os.getcwd()) :
+for root, dirs, files, in os.walk(os.getcwd()):
 	for name in files : 
-		if(name.endswith(".txt")):
+		if(not name.startswith("Search") and name.endswith(".txt")):
 
 
 			marker_dictionary = {}
 			file = open(name)
-			for line in iter(file) :
+			for line in iter(file):
 
 				floor_and_url = line.split("_")
-				if floor_and_url[0] in marker_list_fields :
+				if floor_and_url[0] in marker_list_fields:
 					marker_dictionary[floor_and_url[0]] = floor_and_url[1][0:-1]
 
 			marker_list.append(marker_dictionary)

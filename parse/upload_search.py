@@ -10,12 +10,12 @@ search_dict = {}
 
 # iterate through files in current dir get search file -------------------------
 
-for root, dirs, files, in os.walk(os.getcwd()) :
+for root, dirs, files, in os.walk(os.getcwd()):
 	for name in files : 
 		if(name.startswith("Search")):
 	
 			file = open(name)
-			for line in iter(file) :	
+			for line in iter(file):	
 
 				split = line.split("_")
 				search_dict[split[0]] = split[1][0:-1]
