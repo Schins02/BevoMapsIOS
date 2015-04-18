@@ -37,7 +37,7 @@
         NSString *floor = [NSString stringWithFormat:@"%c", [[SearchLayer parseFloorAndRoom:searchResults] characterAtIndex:0]];
         if ([floor isEqualToString:@""])
         {
-            floor = @"1";
+            floor = nil;
         }
         [result setObject:floor forKey:[SearchLayer getKey:FLOOR_KEY]];
     }
