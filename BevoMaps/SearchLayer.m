@@ -29,7 +29,7 @@
         NSString *building = [SearchLayer parseBuilding:searchResults];
         if (!building)
         {
-            NSLog(@"Building not found");
+//            NSLog(@"Building not found");
         }
         [result setObject:building forKey:[SearchLayer getKey:BUILDING_KEY]];
         
@@ -43,7 +43,7 @@
     }
     @catch (NSException *e)
     {
-        NSLog(@"Bad search term.");
+//        NSLog(@"Bad search term.");
     }
     
     return [NSDictionary dictionaryWithDictionary:result];
@@ -90,14 +90,10 @@
     NSArray *numbers = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"];
     for (int i = 0; i < s.length; ++i)
     {
-        NSLog(@"looking at character: %c", [s characterAtIndex:i]);
         for (int n = 0; n < numbers.count; ++n)
         {
-            NSLog(@"before error");
-            NSLog(@"looking at number: %@", numbers[n]);
             if ([[NSString stringWithFormat:@"%@", numbers[n]] isEqualToString:[NSString stringWithFormat:@"%c",[s characterAtIndex:i]]])
             {
-                NSLog(@"Contains number!!!");
                 return true;
             }
         }
