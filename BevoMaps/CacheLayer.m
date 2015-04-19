@@ -53,7 +53,7 @@
             floor:(NSString *)floor {
   NSDictionary *map = [self.buildingMap objectForKey:building];
   if ([map objectForKey:floor] == nil) {
-    floor = [self.buildingMap objectForKey:DefaultFloor];
+    floor = [map objectForKey:DefaultFloor];
   }
 
   NSString *imageUrl = [map objectForKey:floor];
