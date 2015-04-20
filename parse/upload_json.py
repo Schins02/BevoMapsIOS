@@ -19,7 +19,7 @@ marker_list_fields = ["shortName", "longName", "latitude", "longitude", "thumbna
 
 for root, dirs, files, in os.walk(os.getcwd()):
 	for name in files: 
-		if(name.endswith(".txt")):
+		if name.endswith(".txt"):
 
 			#format: file name => building => GDC.txt
 			#text in file => floor_URL => 01_www.imageURL.com
