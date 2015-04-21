@@ -34,8 +34,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *upButton;
 @property (weak, nonatomic) IBOutlet UIButton *downButton;
 
-@property (strong, nonatomic) NSDictionary *defaultFloors;
-
 @end
 
 @implementation BuildingVC
@@ -166,10 +164,6 @@
 - (IBAction)changeUpFloor {
     self.zoomScale = self.scrollView.zoomScale;
     NSArray *floors = [self.cacheLayer floorNames:self.building];
-    
-    if(self.floor == nil) //hack to fix floor not getting set when user enters no floor
-        self.floor = self.defaultFloors[self.building];
-        
     NSInteger index = [floors indexOfObject:self.floor];
     if (--index >= 0) {
         self.floor = floors[index];
@@ -180,11 +174,6 @@
 - (IBAction)changeDownFloor {
     self.zoomScale = self.scrollView.zoomScale;
     NSArray *floors = [self.cacheLayer floorNames:self.building];
-    
-    
-    if(self.floor == nil)  //hack to fix floor not getting set when user enters no floor
-        self.floor = self.defaultFloors[self.building];
-        
     NSInteger index = [floors indexOfObject:self.floor];
     if (++index < floors.count) {
         self.floor = floors[index];
@@ -196,18 +185,6 @@
     if ([self.textField isFirstResponder]) {
         [self.textField resignFirstResponder];
     }
-}
-
-- (NSDictionary *)defaultFloors {
-    if(!_defaultFloors){
-        _defaultFloors = @{@"BME":@"2",
-                           @"CLA":@"1",
-                           @"SAC":@"1",
-                           @"UTC":@"2",
-                           @"WEL":@"2",
-                           @"GDC":@"2"};
-    }
-    return _defaultFloors;
 }
 
 @end
