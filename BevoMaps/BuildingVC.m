@@ -171,7 +171,7 @@
         self.floor = self.defaultFloors[self.building];
         
     NSInteger index = [floors indexOfObject:self.floor];
-    if (--index > 0) {
+    if (--index >= 0) {
         self.floor = floors[index];
         [self.cacheLayer loadImage:self building:self.building floor:self.floor];
     }
