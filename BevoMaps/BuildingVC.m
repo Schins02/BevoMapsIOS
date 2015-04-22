@@ -165,7 +165,7 @@
   self.zoomScale = self.scrollView.zoomScale;
   NSArray *floors = [self.cacheLayer floorNames:self.building];
   NSInteger index = [floors indexOfObject:self.floor];
-  if (--index > 0) {
+  if (--index >= 0) {
     self.floor = [self.cacheLayer loadImage:self
                                    building:self.building
                                       floor:floors[index]];
