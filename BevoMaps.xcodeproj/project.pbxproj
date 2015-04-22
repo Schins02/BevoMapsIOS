@@ -11,9 +11,9 @@
 		0701C03F1ABF3441008E75DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C03E1ABF3441008E75DA /* AppDelegate.m */; };
 		0701C0421ABF3441008E75DA /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C0411ABF3441008E75DA /* MapVC.m */; };
 		0701C0451ABF3441008E75DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0431ABF3441008E75DA /* Main.storyboard */; };
-		0701C0471ABF3441008E75DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0461ABF3441008E75DA /* Images.xcassets */; };
 		0701C04A1ABF3441008E75DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701C0481ABF3441008E75DA /* LaunchScreen.xib */; };
 		0701C0561ABF3441008E75DA /* BevoMapsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0701C0551ABF3441008E75DA /* BevoMapsTests.m */; };
+		071E7C901AE76BD300DBF31A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071E7C8F1AE76BD300DBF31A /* Images.xcassets */; };
 		0732F2F41AD881E60004760A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0732F2F21AD881E60004760A /* Bolts.framework */; };
 		0732F2F51AD881E60004760A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0732F2F31AD881E60004760A /* Parse.framework */; };
 		0732F2F81AD9030E0004760A /* ImageTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0732F2F71AD9030E0004760A /* ImageTasks.m */; };
@@ -56,11 +56,11 @@
 		0701C0401ABF3441008E75DA /* MapVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapVC.h; sourceTree = "<group>"; };
 		0701C0411ABF3441008E75DA /* MapVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
 		0701C0441ABF3441008E75DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0701C0461ABF3441008E75DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0701C0491ABF3441008E75DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0701C04F1ABF3441008E75DA /* BevoMapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevoMapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0701C0541ABF3441008E75DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0701C0551ABF3441008E75DA /* BevoMapsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BevoMapsTests.m; sourceTree = "<group>"; };
+		071E7C8F1AE76BD300DBF31A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0732F2F21AD881E60004760A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		0732F2F31AD881E60004760A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		0732F2F61AD902FB0004760A /* ImageTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTasks.h; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				07B008A21ADAEE9700AD78A8 /* BuildingVC.h */,
 				07B008A31ADAEE9700AD78A8 /* BuildingVC.m */,
 				0701C0431ABF3441008E75DA /* Main.storyboard */,
-				0701C0461ABF3441008E75DA /* Images.xcassets */,
+				071E7C8F1AE76BD300DBF31A /* Images.xcassets */,
 				0701C0481ABF3441008E75DA /* LaunchScreen.xib */,
 				0701C0391ABF3441008E75DA /* Supporting Files */,
 			);
@@ -322,9 +322,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				071E7C901AE76BD300DBF31A /* Images.xcassets in Resources */,
 				0701C0451ABF3441008E75DA /* Main.storyboard in Resources */,
 				0701C04A1ABF3441008E75DA /* LaunchScreen.xib in Resources */,
-				0701C0471ABF3441008E75DA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

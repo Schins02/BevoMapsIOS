@@ -14,7 +14,9 @@
 
 @property (strong, nonatomic, readonly) NSFileManager *fileManager;
 @property (strong, nonatomic) NSURL *cachePath;
-@property (strong, nonatomic) NSDictionary *buildingMap;
+
+@property (strong, nonatomic) NSDictionary *buildingMap, *searchMap;
+@property (strong, nonatomic) NSMutableDictionary *markerMap;
 
 @end
 
@@ -27,9 +29,9 @@
 - (NSURL *)cachePath {
   if (!_cachePath) {
     NSURL *cacheParent = [[self.fileManager URLsForDirectory:NSCachesDirectory
-                                           inDomains:NSUserDomainMask] lastObject];
+                                                   inDomains:NSUserDomainMask] lastObject];
     _cachePath = [cacheParent URLByAppendingPathComponent:@"ImagesCache"];
-
+    
     BOOL directory = true;
     if (![self.fileManager fileExistsAtPath:[_cachePath path] isDirectory:&directory]) {
       NSLog(@"*** CacheLayer ***: Creating image cache.");
@@ -45,12 +47,13 @@
 - (instancetype)init {
   self = [super init];
   [self buildingTask];
+  [self searchTask];
   return self;
 }
 
-- (void)loadImage:(BuildingVC *)view
-         building:(NSString *)building
-            floor:(NSString *)floor {
+- (NSString *)loadImage:(BuildingVC *)view
+               building:(NSString *)building
+                  floor:(NSString *)floor {
   NSDictionary *map = [self.buildingMap objectForKey:building];
   if ([map objectForKey:floor] == nil) {
     floor = [map objectForKey:DefaultFloor];
@@ -65,6 +68,36 @@
   else {
     [ImageTasks downloadImage:view info:map floor:floor cache:self.cachePath];
   }
+  return floor;
+}
+
+- (void)loadMarkers:(MKMapView *)mapView {
+  CacheLayer *__weak this = self;
+  
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    NSArray *list = [DataLayer markerArray];
+    if (list != nil) {
+      dispatch_async(dispatch_get_main_queue(), ^{
+        for (NSDictionary *info in list) {
+          CLLocationDegrees latitude = [[info objectForKey:Latitude] doubleValue];
+          CLLocationDegrees longitude = [[info objectForKey:Longitude] doubleValue];
+          
+          MKPointAnnotation *annotation = [MKPointAnnotation new];
+          annotation.title = [info objectForKey:ShortName];
+          annotation.subtitle = [info objectForKey:LongName];
+          annotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+          [mapView addAnnotation:annotation];
+          
+          [this.markerMap setValue:info forKey:[info objectForKey:ShortName]];
+          [this.markerMap setValue:info forKey:[NSString stringWithFormat:@"%f,%f", latitude, longitude]];
+        }
+      });
+    }
+  });
+}
+
+- (NSDictionary *)loadSearchMap {
+  return self.searchMap;
 }
 
 - (NSArray *)floorNames:(NSString *)building {
@@ -78,12 +111,25 @@
 
 - (void)buildingTask {
   CacheLayer *__weak this = self;
-
+  
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     NSDictionary *map = [DataLayer buildingMap];
     if (map != nil) {
       dispatch_async(dispatch_get_main_queue(), ^{
         this.buildingMap = map;
+      });
+    }
+  });
+}
+
+- (void)searchTask {
+  CacheLayer *__weak this = self;
+  
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    NSDictionary *map = [DataLayer searchMap];
+    if (map != nil) {
+      dispatch_async(dispatch_get_main_queue(), ^{
+        this.searchMap = map;
       });
     }
   });

@@ -7,14 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 @class BuildingVC;
 
 @interface CacheLayer : NSObject
 
-- (void)loadImage:(BuildingVC *)view
+- (NSString *)loadImage:(BuildingVC *)view
          building:(NSString *)building
             floor:(NSString *)floor;
+- (void)loadMarkers:(MKMapView *)mapView;
+- (NSDictionary *)loadSearchMap;
+
 - (NSArray *)floorNames:(NSString *)building;
 - (BOOL)isBuilding:(NSString *)building;
 
