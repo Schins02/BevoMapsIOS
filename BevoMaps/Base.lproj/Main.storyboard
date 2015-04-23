@@ -89,7 +89,25 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs6-hD-7IQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gq-vn-4I4">
+                                        <rect key="frame" x="134" y="398" width="333" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="333" id="588-bf-yB4"/>
+                                            <constraint firstAttribute="height" constant="59" id="dxg-FF-dJR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
+                                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="8Gq-vn-4I4" firstAttribute="top" secondItem="cs6-hD-7IQ" secondAttribute="top" constant="398" id="EeA-TB-v0v"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Gq-vn-4I4" secondAttribute="bottom" constant="143" id="MSr-hQ-H1v"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Gq-vn-4I4" secondAttribute="trailing" constant="133" id="djW-ep-OK5"/>
+                                    <constraint firstItem="8Gq-vn-4I4" firstAttribute="centerX" secondItem="cs6-hD-7IQ" secondAttribute="centerX" id="qR0-Qv-ZR9"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="shJ-fG-LyS" appends="YES" id="jhX-kg-nXk"/>
                                     <outletCollection property="gestureRecognizers" destination="axm-0b-ukr" appends="YES" id="g4X-11-FxZ"/>
@@ -106,6 +124,7 @@
                     </view>
                     <connections>
                         <outlet property="downGesture" destination="axm-0b-ukr" id="0qK-Ai-txj"/>
+                        <outlet property="floorLabel" destination="8Gq-vn-4I4" id="pLd-ky-R52"/>
                         <outlet property="scrollView" destination="cs6-hD-7IQ" id="eEG-fo-dLo"/>
                         <outlet property="upGesture" destination="shJ-fG-LyS" id="IdU-Mq-CAz"/>
                     </connections>
