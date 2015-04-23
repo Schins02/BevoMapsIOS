@@ -34,34 +34,36 @@
 @property (weak, nonatomic) IBOutlet UIButton *upButton;
 @property (weak, nonatomic) IBOutlet UIButton *downButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *floorLabel;
+
 @end
 
 @implementation BuildingVC
 
 - (UIImage *)image {
-  return self.imageView.image;
+    return self.imageView.image;
 }
 
 -(void)setImage:(UIImage *)image {
-  self.scrollView.zoomScale = 1;
-  self.imageView.image = image;
-  self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-  [self.imageView sizeToFit];
-  self.scrollView.contentSize = image ? image.size : CGSizeZero;
-  self.scrollView.zoomScale = self.zoomScale;
+    self.scrollView.zoomScale = 1;
+    self.imageView.image = image;
+    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    [self.imageView sizeToFit];
+    self.scrollView.contentSize = image ? image.size : CGSizeZero;
+    self.scrollView.zoomScale = self.zoomScale;
 }
 
 - (void)setScrollView:(UIScrollView *)scrollView {
-  scrollView.backgroundColor = [UIColor colorWithRed:232/255.0
-                                               green:221/255.0
-                                                blue:189/255.0
-                                               alpha:1];
-  scrollView.delegate = self;
-  scrollView.contentInset = UIEdgeInsetsMake(80, 30, 80, 30);
-  scrollView.minimumZoomScale = 0.1;
-  scrollView.maximumZoomScale = 2.0;
-  scrollView.showsHorizontalScrollIndicator = YES;
-  _scrollView = scrollView;
+    scrollView.backgroundColor = [UIColor colorWithRed:232/255.0
+                                                 green:221/255.0
+                                                  blue:189/255.0
+                                                 alpha:1];
+    scrollView.delegate = self;
+    scrollView.contentInset = UIEdgeInsetsMake(80, 30, 80, 30);
+    scrollView.minimumZoomScale = 0.1;
+    scrollView.maximumZoomScale = 2.0;
+    scrollView.showsHorizontalScrollIndicator = YES;
+    _scrollView = scrollView;
 }
 
 -(UIButton *)createButton:(NSString *)title y_coord:(float)y
@@ -126,71 +128,95 @@
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-  return self.imageView;
+    return self.imageView;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-  [textField resignFirstResponder];
-  NSDictionary *map = [SearchLayer parseInputText:textField.text];
-  NSString *building = [map objectForKey:@"building"];
-  
-  if (building != nil && [self.cacheLayer isBuilding:building]) {
-    self.building = building;
-    self.floor = [self.cacheLayer loadImage:self
-                                   building:self.building
-                                      floor:[map objectForKey:@"floor"]];
-  }
-  return false;
+    [textField resignFirstResponder];
+    NSDictionary *map = [SearchLayer parseInputText:textField.text];
+    NSString *building = [map objectForKey:@"building"];
+    
+    if (building != nil && [self.cacheLayer isBuilding:building]) {
+        self.building = building;
+        self.floor = [self.cacheLayer loadImage:self
+                                       building:self.building
+                                          floor:[map objectForKey:@"floor"]];
+    }
+    return false;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-  [self.view addSubview:self.bgView];
-  [UIView animateWithDuration:BGFade animations:^{
-    self.bgView.backgroundColor = [UIColor colorWithRed:0
-                                                  green:0
-                                                   blue:0
-                                                  alpha:BGAlpha];
-    
-  }];
+    [self.view addSubview:self.bgView];
+    [UIView animateWithDuration:BGFade animations:^{
+        self.bgView.backgroundColor = [UIColor colorWithRed:0
+                                                      green:0
+                                                       blue:0
+                                                      alpha:BGAlpha];
+        
+    }];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-  [UIView animateWithDuration:BGFade animations:^{
-    self.bgView.backgroundColor = [UIColor colorWithRed:0
-                                                  green:0
-                                                   blue:0
-                                                  alpha:0];
-  } completion:^(BOOL finished) {
-    [self.bgView removeFromSuperview];
-  }];
+    [UIView animateWithDuration:BGFade animations:^{
+        self.bgView.backgroundColor = [UIColor colorWithRed:0
+                                                      green:0
+                                                       blue:0
+                                                      alpha:0];
+    } completion:^(BOOL finished) {
+        [self.bgView removeFromSuperview];
+    }];
 }
 
 - (IBAction)changeUpFloor {
-  self.zoomScale = self.scrollView.zoomScale;
-  NSArray *floors = [self.cacheLayer floorNames:self.building];
-  NSInteger index = [floors indexOfObject:self.floor];
-  if (--index >= 0) {
-    self.floor = [self.cacheLayer loadImage:self
-                                   building:self.building
-                                      floor:floors[index]];
-  }
+    self.zoomScale = self.scrollView.zoomScale;
+    NSArray *floors = [self.cacheLayer floorNames:self.building];
+    NSInteger index = [floors indexOfObject:self.floor];
+    if (--index >= 0) {
+        self.floor = [self.cacheLayer loadImage:self
+                                       building:self.building
+                                          floor:floors[index]];
+        [self startFade:self.floor];
+    }
 }
 
 - (IBAction)changeDownFloor {
-  self.zoomScale = self.scrollView.zoomScale;
-  NSArray *floors = [self.cacheLayer floorNames:self.building];
-  NSInteger index = [floors indexOfObject:self.floor];
-  if (++index < floors.count) {
-    self.floor = [self.cacheLayer loadImage:self
-                                   building:self.building
-                                      floor:floors[index]];
-  }
+    self.zoomScale = self.scrollView.zoomScale;
+    NSArray *floors = [self.cacheLayer floorNames:self.building];
+    NSInteger index = [floors indexOfObject:self.floor];
+    if (++index < floors.count) {
+        self.floor = [self.cacheLayer loadImage:self
+                                       building:self.building
+                                          floor:floors[index]];
+        [self startFade:self.floor];
+    }
+}
+
+-(IBAction)startFade:(NSString *)floor{
+    
+    [self.floorLabel setAlpha:0.0f];
+    self.floorLabel.text = [NSString stringWithFormat:@"Current floor %@", self.floor];
+    
+    // Fade in
+    [UIView animateWithDuration:1.0f animations:^{
+        
+        [self.floorLabel setAlpha:1.0f];
+        
+    } completion:^(BOOL finished) {
+        
+        // Fade out
+        [UIView animateWithDuration:1.0f animations:^{
+            
+            [self.floorLabel setAlpha:0.0f];
+            
+        } completion:nil];
+        
+    }];
 }
 
 - (void)touchBackground {
-  if ([self.textField isFirstResponder]) {
-    [self.textField resignFirstResponder];
-  }
+    if ([self.textField isFirstResponder]) {
+        [self.textField resignFirstResponder];
+    }
 }
 
 @end
