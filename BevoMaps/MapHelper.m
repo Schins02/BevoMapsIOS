@@ -90,9 +90,8 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
   if (!view) {
     view = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                         reuseIdentifier:@"BuildingAnnotation"];
+    view.canShowCallout = true;
     view.image = [UIImage imageNamed:@"Building"];
-    view.centerOffset = CGPointMake(view.image.size.width/2,
-                                    view.image.size.height/2);
   }
   else {
     view.annotation = annotation;
