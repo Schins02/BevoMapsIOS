@@ -71,7 +71,7 @@
   UIColor *burntOrange = [UIColor colorWithRed:191.0/255.0
                                          green:87.0/255.0
                                           blue:0.0
-                                         alpha:1.0];
+                                         alpha:1];
   [button setTitleColor:burntOrange forState:UIControlStateNormal];
   button.frame = CGRectMake(0.0, y, BUTTON_WIDTH, BUTTON_HEIGHT);
   button.titleLabel.font = [UIFont systemFontOfSize:FONT_SIZE];
@@ -94,6 +94,10 @@
   self.textField.delegate = self;
   self.textField.placeholder = @"Search";
   self.textField.text = self.text;
+  self.textField.tintColor = [UIColor colorWithRed:60/255.0
+                                             green:135/255.0
+                                              blue:163/255.0
+                                             alpha:1];
   self.navigationItem.titleView = self.textField;
   
   self.upGesture.numberOfTouchesRequired = 2;

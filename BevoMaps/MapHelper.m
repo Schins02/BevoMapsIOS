@@ -41,6 +41,8 @@
     [self.locationManager requestWhenInUseAuthorization];
     
     self.mapView = mapView;
+    self.mapView.showsBuildings = true;
+    self.mapView.showsPointsOfInterest = false;
     [self centerTower];
   }
   return self;
@@ -59,12 +61,8 @@
   if (!self.userLocation) {
     return;
   }
-  MKCoordinateRegion region;
-  region.center.latitude = self.userLocation.coordinate.latitude;
-  region.center.longitude = self.userLocation.coordinate.longitude;
-  region.span.latitudeDelta = SpanDelta;
-  region.span.longitudeDelta = SpanDelta;
-  [self.mapView setRegion:region animated:true];
+  [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate
+                           animated:true];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
